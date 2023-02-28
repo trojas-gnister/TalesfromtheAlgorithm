@@ -18,14 +18,17 @@ async function startServer() {
 
   const { default: ChatGPT } = await import("chatgpt-official");
 
-  let bot = new ChatGPT("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", options);
+  let bot = new ChatGPT("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", options);
 
-  let response = await bot.ask("think of 5 funny and clever names about generative AI and storys. the AI will be fed prompts by the user and create custom stories. make it edgar allan poe themed. thanks ");
+  let response = await bot.ask("simulate a hospital enivorment. i have a patient that came in with their ear hurting. what should i do?");
   console.log(response);
+  let response2 = await bot.ask("what should i tell the patient")
+  console.log(response2)
+
 
   let conversationId2 = "another conversation name";
-  let response2 = await bot.ask("Hello?", conversationId2);
-  console.log(response2);
+  let response3 = await bot.ask("Hello?", conversationId2);
+  console.log(response3);
 
   app.listen(PORT, () => {
     console.log(`Server available at localhost: ${PORT}`);
@@ -33,4 +36,3 @@ async function startServer() {
 }
 
 startServer();
-
