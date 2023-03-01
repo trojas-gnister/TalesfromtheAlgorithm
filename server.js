@@ -1,5 +1,7 @@
 const express = require("express");
 const PORT = process.env.PORT || 3001;
+require('dotenv').config();
+const apiKey = process.env.API_KEY
 
 async function startServer() {
   const app = express();
@@ -18,17 +20,15 @@ async function startServer() {
 
   const { default: ChatGPT } = await import("chatgpt-official");
 
-  let bot = new ChatGPT("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", options);
+  let bot = new ChatGPT(apiKey, options);
 
-  let response = await bot.ask("simulate a hospital enivorment. i have a patient that came in with their ear hurting. what should i do?");
+
+  const prompt1 = "hello i am story man can you make story pleas"
+  let response = await bot.ask(`${prompt1}`);
   console.log(response);
-  let response2 = await bot.ask("what should i tell the patient")
+  let response2 = await bot.ask("now add a dragon to the story")
   console.log(response2)
 
-
-  let conversationId2 = "another conversation name";
-  let response3 = await bot.ask("Hello?", conversationId2);
-  console.log(response3);
 
   app.listen(PORT, () => {
     console.log(`Server available at localhost: ${PORT}`);
