@@ -2,6 +2,7 @@ const express = require("express");
 const PORT = process.env.PORT || 3001;
 require('dotenv').config();
 const apiKey = process.env.API_KEY
+const test = "2213"
 
 async function startServer() {
   const app = express();
