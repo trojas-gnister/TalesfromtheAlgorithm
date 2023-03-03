@@ -1,17 +1,16 @@
+import { ThemeProvider } from '@material-ui/core/styles';
+import Theme from './components/Theme/';
 import React from 'react'
 import reportWebVitals from './reportWebVitals'
 import App from './App'
 import './index.css'
 
-import { MantineProvider } from '@mantine/core';
-
-function Demo() {
-  return (
-    <MantineProvider withGlobalStyles withNormalizeCSS>
-      <App />
-    </MantineProvider>
-  );
-}
+ReactDOM.render(
+  <ThemeProvider theme={Theme}>
+    <App />
+  </ThemeProvider>,
+  document.getElementById('root')
+);
 
 
 // If you want to start measuring performance in your app, pass a function
