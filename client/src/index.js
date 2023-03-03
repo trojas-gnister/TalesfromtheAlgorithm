@@ -1,3 +1,5 @@
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Theme from './components/Theme/';
 import React from 'react'
@@ -6,9 +8,11 @@ import App from './App'
 import './index.css'
 
 ReactDOM.render(
-  <ThemeProvider theme={Theme}>
-    <App />
-  </ThemeProvider>,
+  <BrowserRouter>
+    <ThemeProvider theme={Theme}>
+      <App />
+    </ThemeProvider>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
