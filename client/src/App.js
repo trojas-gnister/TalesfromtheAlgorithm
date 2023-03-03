@@ -1,4 +1,8 @@
 import { Route, Routes } from 'react-router-dom'
+import {
+  Layout,
+  Home,
+} from './components'
 import './App.css';
 
 function App() {
