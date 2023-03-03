@@ -77,7 +77,18 @@ async function startServer() {
   console.log(response2);
 
   app.listen(PORT, () => {
-    console.log(`Server available at localhost: ${PORT}`);
+    console.log(
+      `
+      ==============================
+      "Online at ${PORT}, Server is."  
+                  __.-._                   
+                  '-._"7'  
+                   /'.-c          
+                   |  /T   
+                  _)_/LI     
+      ==============================
+      
+    `);
   });
 }
 
