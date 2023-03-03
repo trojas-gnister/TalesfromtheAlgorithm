@@ -13,6 +13,3 @@ app.use(
 );
 
 module.exports = app;
-
-
-// route logic using graphQL library
