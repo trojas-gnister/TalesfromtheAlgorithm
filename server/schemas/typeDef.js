@@ -42,3 +42,6 @@ export const CREATE_STORYBOOK = gql`
 `;
 
 export default typeDefs;
+
+
+// graphQL schema file: defining types, queries, mutations, and any other element required
