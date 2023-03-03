@@ -24,6 +24,10 @@
   "dependencies": {
     "bcrypt": "^5.1.0",
     "concurrently": "^7.6.0",
-    "mongoose": "^7.0.0"
+    "mongoose": "^7.0.0",
+    "@mui/material": "^5.11.11",
+    "@mui/styled-engine-sc": "^5.11.11",
+    "concurrently": "^7.6.0",
+    "styled-components": "^5.3.8"
   }
 }
