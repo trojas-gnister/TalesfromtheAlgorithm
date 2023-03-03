@@ -1,7 +1,54 @@
 const express = require("express");
+const mongoose = require('mongoose')
 const PORT = process.env.PORT || 3001;
 require('dotenv').config();
 const apiKey = process.env.API_KEY
+const bcrypt = require('bcrypt')
+
+mongoose.connect('mongodb://localhost:27017/algoDB', {useNewUrlParser: true})
+
+
+const userSchema = new mongoose.Schema({
+    email: {
+    type: String,
+    required: true, 
+    unique: [true, "Please input an e-mail"]
+    },
+    password: {
+    type: String,
+    required: [true, "Please input a password"]
+  } 
+})
+
+userSchema.pre('save', function(next){
+  const user = this;
+  if (!user.isModified('password')) {
+    return next();
+  }
+  bcrypt.hash(user.password, 10, (error, hash) => {
+    if (error) {
+      return next(error)
+    }
+    user.password = hash;
+    next()
+  })
+})
+
+userSchema.methods.authenticate = function(password) {
+  const user = this;
+  return bcrypt.compareSync(password, user.password)
+}
+
+const User = mongoose.model("user", userSchema)
+
+const testUser = new User({
+  email: "test@mail.com",
+  password: "password123"
+})
+
+testUser.save()
+
+
 
 async function startServer() {
   const app = express();
