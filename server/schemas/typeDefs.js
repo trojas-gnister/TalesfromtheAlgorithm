@@ -42,3 +42,6 @@ export const CREATE_STORYBOOK = gql`
 `;
 
 export default typeDefs;
+
+
+// typeDefs select required data out of the entire data that was mapped out by resolvers
