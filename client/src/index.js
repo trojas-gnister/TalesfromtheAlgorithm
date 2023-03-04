@@ -1,7 +1,5 @@
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { ThemeProvider } from '@material-ui/core/styles';
-import Theme from './components/Theme/';
 import React from 'react'
 import reportWebVitals from './reportWebVitals'
 import App from './App'
@@ -9,9 +7,7 @@ import './index.css'
 
 ReactDOM.render(
   <BrowserRouter>
-    <ThemeProvider theme={Theme}>
-      <App />
-    </ThemeProvider>
+    <App />
   </BrowserRouter>,
   document.getElementById('root')
 );

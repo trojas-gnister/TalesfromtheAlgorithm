@@ -4,9 +4,18 @@ const PORT = process.env.PORT || 3001;
 require('dotenv').config();
 const apiKey = process.env.API_KEY
 const bcrypt = require('bcrypt')
+const path = require('path');
 
 mongoose.connect('mongodb://localhost:27017/algoDB', {useNewUrlParser: true})
 
+// Serve static files from the React app
+const app = express();
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+// Handle React routing, return all requests to React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
 
 const userSchema = new mongoose.Schema({
     email: {
