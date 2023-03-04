@@ -24,6 +24,8 @@
   "dependencies": {
     "@mui/material": "^5.11.11",
     "@mui/styled-engine-sc": "^5.11.11",
+    "apollo-server": "^3.12.0",
+    "apollo-server-express": "^3.12.0",
     "bcrypt": "^5.1.0",
     "concurrently": "^7.6.0",
     "expect": "^29.4.3",
@@ -31,5 +33,8 @@
     "materialize-css": "^1.0.0",
     "mongoose": "^7.0.0",
     "styled-components": "^5.3.8"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.18.6"
   }
 }

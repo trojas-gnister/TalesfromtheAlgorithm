@@ -1,4 +1,6 @@
 const { User } = require("../models/User");
+import { expect } from "@jest/globals";
+
 const expect = User.expect;
 
 // test create
@@ -36,6 +38,7 @@ expect(
   })
 ).resolves.toBeTruthy();
 
+
 jest.use(expect);
 
-module.exports = { User,  expect, jest };
+module.exports = { expect };
