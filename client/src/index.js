@@ -3,10 +3,11 @@ import reportWebVitals from './reportWebVitals'
 import App from './App'
 import './index.css'
 
-import { MantineProvider } from '@mantine/core';
+// import { MantineProvider } from '@mantine/core';
 
 function Demo() {
   return (
+    // eslint-disable-next-line react/jsx-no-undef
     <MantineProvider withGlobalStyles withNormalizeCSS>
       <App />
     </MantineProvider>
