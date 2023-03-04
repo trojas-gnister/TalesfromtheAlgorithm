@@ -44,4 +44,4 @@ export const CREATE_STORYBOOK = gql`
 export default typeDefs;
 
 
-// graphQL schema file: defining types, queries, mutations, and any other element required
+// typeDefs select required data out of the entire data that was mapped out by resolvers
