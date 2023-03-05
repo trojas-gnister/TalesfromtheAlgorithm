@@ -3,7 +3,7 @@ const path = require("path");
 
 const db = require("./config/connection");
 
-const apolloServer = require("../apolloServer.js");
+const apolloServer = require("../apolloServer");
 const { typeDefs, resolvers } = require("./schemas");
 
 const bodyParser = require("body-parser");
