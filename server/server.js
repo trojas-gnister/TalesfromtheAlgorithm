@@ -1,9 +1,9 @@
 const express = require("express");
 const path = require("path");
 
-const db = require("./config/connection");
+const db = require("./config/db/connection");
 
-const apolloServer = require("../apolloServer.js");
+const apolloServer = require("./apolloServer");
 const { typeDefs, resolvers } = require("./schemas");
 
 const bodyParser = require("body-parser");
