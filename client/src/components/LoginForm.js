@@ -1,6 +1,8 @@
 import { Container, TextField, Button, Typography, Paper } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
+import LoginIcon from '@mui/icons-material/Login';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 import { Box } from '@mui/system';
 import * as React from 'react';
 
@@ -24,15 +26,17 @@ export default function LoginForm() {
                 }}
             >
             <Avatar sx={{ m: 1, bgcolor: 'primary.main'}}>
-            <LockOutlinedIcon />
+            <LoginIcon />
           </Avatar>
                 <Typography component='h1' variant='h5'>
-                    Login to Your Account
+                    Good to see you, again.
                 </Typography>
                 {/* Box originally had the function below, waiting till we get that function set up */}
                 {/* onSubmit={handleSubmit} */}
                 <Box component="form" noValidate sx={{ mt: 1 }}>
-                    <TextField
+                    <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                        <AccountCircle sx={{ color: 'lightgrey', mb: 2.5, mr: 1}} />   
+                        <TextField
                         variant='filled'
                         color='secondary'
                         margin="normal"
@@ -43,6 +47,9 @@ export default function LoginForm() {
                         autoComplete="username"
                         autoFocus
                     />
+                    </Box>
+                <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                    <LockOutlinedIcon sx={{ color: 'lightgrey', mb: 2.5, mr: 1}} />   
                     <TextField
                         variant='filled'
                         color='secondary'
@@ -54,13 +61,14 @@ export default function LoginForm() {
                         id="password"
                         autoComplete="current-password"
                     />
+                    </Box>
                     <Button
                         type="submit"
                         fullWidth
                         variant="contained"
                         sx={{ mt: 3, mb: 2 }}
                     >
-                        Sign in
+                        LOGIN
                     </Button>
                     {/* <Grid container>
                         <Grid item xs>

@@ -15,11 +15,13 @@ import darkScrollbar from '@mui/material/darkScrollbar';
 // light gray - #D3D3D3
 // pink - #F2A2E8
 // mint green - #3EB489
+// green - #00AB4D
 // dark purple - #11153A
+// vibrant purple color - #a100f2
 const darkTheme = createTheme({
   palette: {
       primary: {
-        main: '#F2A2E8',
+        main: '#00AB4D',
       },
       secondary: {
         main: '#fff',

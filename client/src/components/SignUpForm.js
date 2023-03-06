@@ -27,7 +27,7 @@ export default function LoginForm() {
             <EmojiPeopleRoundedIcon />
             </Avatar>
                 <Typography component='h1' variant='h5'>
-                    Enter your information below!
+                    Enter your information Below
                 </Typography>
                 {/* Box originally had the function below, waiting till we get that function set up */}
                 {/* onSubmit={handleSubmit} */}
