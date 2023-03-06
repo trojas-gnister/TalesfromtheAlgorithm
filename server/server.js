@@ -1,10 +1,10 @@
 const express = require("express");
 const path = require("path");
 
-const db = require("./config/db/connection");
+const mongoose = require("mongoose");
 
-const apolloServer = require("./apolloServer");
-const { typeDefs, resolvers } = require("./schemas");
+const typeDefs = require("./graphQL/typeDefs");
+const resolvers = require("./graphQL/resolvers");
 
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
@@ -66,8 +66,19 @@ async function startServer() {
   });
 }
 
-startServer();
-apolloServer(typeDefs, resolvers);
+startServer().then (() => {
+  mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/algoDB", {
+    useFindAndModify: false,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }).then(() => {
+    console.log("Connected to MongoDB");
+    return server.listen({ port: 5000 });
+    }).then((res) => {
+      console.log(`Server running at ${res.url}`);
+    });
+  });
+
 
 
 
