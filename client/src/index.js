@@ -11,6 +11,11 @@ import './index.css'
 import darkScrollbar from '@mui/material/darkScrollbar';
 
 // Custom Dark Theme values
+// white - #fff
+// light gray - #D3D3D3
+// pink - #F2A2E8
+// mint green - #3EB489
+// dark purple - #11153A
 const darkTheme = createTheme({
   palette: {
       primary: {
@@ -22,7 +27,7 @@ const darkTheme = createTheme({
       background: '#11153A',
       text: {
         primary: '#fff',
-        secondary: '#fff',
+        secondary: '#D3D3D3',
       },
 },
 
