@@ -1,15 +1,12 @@
-const express = require("express");
-const path = require("path");
-
-const mongoose = require("mongoose");
-
-const typeDefs = require("./graphQL/typeDefs");
-const resolvers = require("./graphQL/resolvers");
-
-const bodyParser = require("body-parser");
-const dotenv = require("dotenv");
-dotenv.config();
+require('dotenv').config();
 const apiKey = process.env.API_KEY;
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const { ApolloServer } = require("apollo-server");
+const typeDefs = require('./graphQL/typeDefs');
+
+const  resolvers  = require("./graphQL/resolvers");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -23,7 +20,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 async function startServer() {
-  const app = express();
   app.use(express.static("public"));
 
   let options = {
@@ -49,7 +45,19 @@ async function startServer() {
   let conversationId2 = "another conversation name";
   let response2 = await bot.ask("Hello?", conversationId2);
   console.log(response2);
+}
 
+startServer().then (() => {
+  mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1/algoDB", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }).then(() => {
+    console.log("Connected to MongoDB");
+    server.listen({ port: 5000 }).then((res) => {
+      console.log(`Server running at ${res.url}`);
+    });
+  });
+  
   app.listen(PORT, () => {
     console.log(
       `
@@ -64,32 +72,5 @@ async function startServer() {
 
     `);
   });
-}
-
-startServer().then (() => {
-  mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/algoDB", {
-    useFindAndModify: false,
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }).then(() => {
-    console.log("Connected to MongoDB");
-    return server.listen({ port: 5000 });
-    }).then((res) => {
-      console.log(`Server running at ${res.url}`);
-    });
-  });
-
-
-
-
-//  found within mod21_MERN bootcamp mini-proj server.js file.
-//  use ? below__
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static(path.join(__dirname, "../client/build")));
-// }
-
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
-// });
-
+});
 
