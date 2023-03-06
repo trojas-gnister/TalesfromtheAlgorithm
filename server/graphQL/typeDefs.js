@@ -1,6 +1,6 @@
-import { gql } from "apollo-server-express";
+const { gql } = require('apollo-server-express');
 
-export const CREATE_STORYBOOK = gql`
+module.exports = gql`
   type Storybook {
     _id: ID!
     name: String!
@@ -40,8 +40,6 @@ export const CREATE_STORYBOOK = gql`
     deleteImageFromPage(pageId: String!, imageId: String!): Page
   }
 `;
-
-export default typeDefs;
 
 
 // typeDefs select required data out of the entire data that was mapped out by resolvers
