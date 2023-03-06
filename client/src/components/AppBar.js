@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 export default function ButtonAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -20,11 +20,11 @@ export default function ButtonAppBar() {
             sx={{ mr: 2 }}
           >
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} color="#fff">
             DreamAI
           </Typography>
-          <Button color="inherit">Sign Up</Button>
-          <Button component={Link} to="/login" color="inherit">Login</Button>
+          <Button component={Link} to="/login">Login</Button>
+          <Button component={Link} to="/signup">Sign Up</Button>
         </Toolbar>
       </AppBar>
     </Box>

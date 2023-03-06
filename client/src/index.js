@@ -15,12 +15,14 @@ const darkTheme = createTheme({
   palette: {
       primary: {
         main: '#F2A2E8',
-        blue: '#0FFDD1',
+      },
+      secondary: {
+        main: '#fff',
       },
       background: '#11153A',
       text: {
         primary: '#fff',
-        secondary: '#fff'
+        secondary: '#fff',
       },
 },
 
