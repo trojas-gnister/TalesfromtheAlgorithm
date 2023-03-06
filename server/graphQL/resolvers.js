@@ -1,25 +1,16 @@
-const { Story, User } = require('../models');
+const { User } = require('../models');
 
-const resolvers = {
+module.exports = {
   Query: {
-    User: async () => {
-      return User.find({});
-    },
-    Stories: async (parent, { _id }) => {
-      const params = _id ? { _id } : {};
-      return Story.find(params);
-    },
+    users: () => User.find(),
   },
-  
   Mutation: {
-    createStoryBook: async (parent, args) => {
-      const Story = await Story.create(args);
-      return Story;
+    addUser: async (_, { username, password }) => {
+      const user = new User({ username, password });
+      await user.save();
+      return user;
     },
   },
 };
-
-module.exports = resolvers;
-
 
 //  resolvers check what data is in db

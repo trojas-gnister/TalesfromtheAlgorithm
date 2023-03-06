@@ -1,45 +1,17 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require('apollo-server-express')
 
 module.exports = gql`
-  type Storybook {
-    _id: ID!
-    name: String!
-    pages: [Page]
-  }
+type User {
+  username: String
+  password: String
+}
 
-  type Page {
-    _id: ID!
-    name: String!
-    text: [Text]
-    images: [Image]
-  }
+type Query {
+  users: [User]
+}
 
-  type Text {
-    _id: ID!
-    content: String!
-  }
-
-  // type Image {
-  //   _id: ID!
-  //   url: String!
-  // }
-
-  type Query {
-    storybooks: [Storybook]
-    page(pageId: String!): Page
-  }
-
-  type Mutation {
-    createStorybook(name: String!): Storybook
-    addPageToStorybook(storybookId: String!, pageName: String!): Page
-    addTextToPage(pageId: String!, text: String!): Page
-    addImageToPage(pageId: String!, imageUrl: String!): Page
-    deleteStorybook(storybookId: String!): Storybook
-    deletePageFromStorybook(pageId: String!): Storybook
-    deleteTextFromPage(pageId: String!, textId: String!): Page
-    deleteImageFromPage(pageId: String!, imageId: String!): Page
-  }
-`;
-
-
+type Mutation {
+  addUser(username: String, password: String): User
+}
+`
 // typeDefs select required data out of the entire data that was mapped out by resolvers
