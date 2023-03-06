@@ -14,7 +14,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
 });
-console.log(apiKey)
+
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
