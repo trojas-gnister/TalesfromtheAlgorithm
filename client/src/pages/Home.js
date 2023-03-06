@@ -1,16 +1,16 @@
 import React from 'react';
 import Heading from '../components/Heading'
-import Image from '../assets/DALLE-background.png';
+import Background from '../assets/DALLE-background.png';
 import { Container } from '@mui/system';
 import AppBar from '../components/AppBar'
 import StartButton from '../components/StartButton'
 
-const Home = () => {
+export const Home = () => {
   return (
     <Container maxWidth={false} disableGutters>
           <div
       style={{
-        backgroundImage:`url(${Image})`,
+        backgroundImage:`url(${Background})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
@@ -28,4 +28,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+

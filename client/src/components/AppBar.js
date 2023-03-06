@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import { Link } from 'react-router-dom';
 
 export default function ButtonAppBar() {
   return (
@@ -23,7 +24,7 @@ export default function ButtonAppBar() {
             DreamAI
           </Typography>
           <Button color="inherit">Sign Up</Button>
-          <Button color="inherit">Login</Button>
+          <Button component={Link} to="/login" color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </Box>

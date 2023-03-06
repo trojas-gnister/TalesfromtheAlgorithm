@@ -26,7 +26,7 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: [
-      'Arvo'
+      'PT-Serif'
     ]
 
   },
