@@ -1,14 +1,40 @@
-import { loadStripe } from '@stripe/stripe-js';
-import { Elements, } from "@stripe/react-stripe-js";
+import { useEffect, useState } from "react";
 
-//activate stripe by adding const with publishable api key
-const stripe = loadStripe(pk_test_51MiQbWLUzojKOsKTrMqGD8DGNze2xxRWxakxEw5tM9SZRsOJlFJUbCxjEeiiyuP9ICHLn6A179d2ZrakrHJti1rg009ANLkVir);
+import { Elements } from "@stripe/react-stripe-js";
+import CheckoutForm from "./checkoutForm";
+import { loadStripe } from "@stripe/stripe-js";
 
-//wrap with elements component
-<Container maxWidth="md" className={classes.container}>
-     <Paper elevation={5}>
-		 <Elements stripe={stripe}>
-               <Stepper />
-		 </Elements>
-     </Paper>
-</Container>
+function Payment() {
+  const [stripePromise, setStripePromise] = useState(null);
+  const [clientSecret, setClientSecret] = useState("");
+
+  useEffect(() => {
+    fetch("/config").then(async (r) => {
+      const { publishableKey } = await r.json();
+      setStripePromise(loadStripe(publishableKey));
+    });
+  }, []);
+
+  useEffect(() => {
+    fetch("/create-payment-intent", {
+      method: "POST",
+      body: JSON.stringify({}),
+    }).then(async (result) => {
+      var { clientSecret } = await result.json();
+      setClientSecret(clientSecret);
+    });
+  }, []);
+
+  return (
+    <>
+      <h1>React Stripe and the Payment Element</h1>
+      {clientSecret && stripePromise && (
+        <Elements stripe={stripePromise} options={{ clientSecret }}>
+          <CheckoutForm />
+        </Elements>
+      )}
+    </>
+  );
+}
+
+export default Payment;

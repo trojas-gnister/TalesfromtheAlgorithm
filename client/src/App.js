@@ -1,5 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Payment } from './pages/donations'
+import { Completion } from './pages/paymentSuccessful'
 
 // imported webpages
 import { Home } from './pages/Home'
@@ -14,6 +16,8 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
+          <Route path='/donations' element={<Payment />} />
+          <Route path='/paymentSuccessful' element={<Completion />} />
         </Routes>
     </div>
   )
