@@ -2,21 +2,28 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import reportWebVitals from './reportWebVitals'
 import App from './App'
 import './index.css'
 
 // Global Theme Settings
 import darkScrollbar from '@mui/material/darkScrollbar';
-const theme = createTheme({
+
+// Custom Dark Theme values
+const darkTheme = createTheme({
   palette: {
-    primary: {
-      main: '#f2a2e8',
-    },
-    secondary: {
-      main: '#FFFFFF'
-    }
-  },
+      primary: {
+        main: '#F2A2E8',
+        blue: '#0FFDD1',
+      },
+      background: '#11153A',
+      text: {
+        primary: '#fff',
+        secondary: '#fff'
+      },
+},
+
   components: {
     MuiCssBaseline: {
       styleOverrides: (themeParam) => ({
@@ -26,7 +33,7 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: [
-      'PT-Serif'
+      'PT Serif'
     ]
 
   },
@@ -34,7 +41,8 @@ const theme = createTheme({
 });
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={darkTheme}>
+    <CssBaseline />
     <BrowserRouter>
       <App />
     </BrowserRouter>

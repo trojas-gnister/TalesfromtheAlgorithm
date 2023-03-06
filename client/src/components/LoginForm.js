@@ -1,38 +1,53 @@
-import { Container, TextField, Button, Typography } from '@mui/material';
+import { Container, TextField, Button, Typography, Paper } from '@mui/material';
+import Avatar from '@mui/material/Avatar';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Box } from '@mui/system';
 import * as React from 'react';
+import { pink } from '@mui/material/colors';
+
+
 
 
 export default function LoginForm() {
+
     return (
         <Container component='main' maxWidth='xs'>
-            <Box
+            <Paper
+            elevation={24}
                 style={{
-                    marginTop: 8,
+                    rounded: true,
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
+                    backgroundColor: '#11153A',
+                    padding: 30,
+
                 }}
             >
+            <Avatar sx={{ m: 1, bgcolor: 'primary.main'}}>
+            <LockOutlinedIcon />
+          </Avatar>
                 <Typography component='h1' variant='h5'>
-                    Sign in
+                    Login to Your Account
                 </Typography>
                 {/* Box originally had the function below, waiting till we get that function set up */}
                 {/* onSubmit={handleSubmit} */}
                 <Box component="form" noValidate sx={{ mt: 1 }}>
                     <TextField
+                        variant='filled'
+                        color='secondary'
                         margin="normal"
-                        required
                         fullWidth
-                        id="email"
-                        label="Email Address"
-                        name="email"
-                        autoComplete="email"
+                        id="username"
+                        label="Username"
+                        name="username"
+                        autoComplete="username"
                         autoFocus
                     />
                     <TextField
+                        variant='filled'
+                        color='secondary'
                         margin="normal"
-                        required
                         fullWidth
                         name="password"
                         label="Password"
@@ -49,7 +64,7 @@ export default function LoginForm() {
                         Sign in
                     </Button>
                 </Box>
-            </Box>
+            </Paper>
         </Container>
 
 
