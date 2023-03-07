@@ -3,17 +3,17 @@ const apiKey = process.env.API_KEY;
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const { ApolloServer } = require("apollo-server");
-const typeDefs = require('./graphQL/typeDefs');
 
-const  resolvers  = require("./graphQL/resolvers");
-
-const PORT = process.env.PORT || 3001;
-const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
 });
+const { ApolloServer } = require("apollo-server");
+const typeDefs = require('./graphQL/typeDefs');
+const  resolvers  = require("./graphQL/resolvers");
+
+const PORT = process.env.PORT || 3001;
+const app = express();
 
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
