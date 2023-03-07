@@ -4,7 +4,7 @@ import Image from '../assets/darkest-background.png';
 import LoginForm from '../components/LoginForm';
 import SimpleAppBar from '../components/SimpleAppBar';
 
-export const Login = () => {
+export default function Login() {
     return (
         <Container maxWidth={true} disableGutters>
             <div

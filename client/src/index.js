@@ -7,11 +7,12 @@ import reportWebVitals from './reportWebVitals'
 import App from './App'
 import './index.css'
 
-// openAi_API_request-response_handlers
-import { sendRequest, handleResponse } from "./utils/openAi";
-import { openAi } from "./utils/openAi";
-import { storeResponse } from "./utils/mutations";
-import { getResponse } from "./utils/queries";
+// // openAi_API_request-response_handlers
+
+// import { sendRequest, handleResponse } from "../../server/utils/openAi";
+// import { openAi } from "../../server/utils/openAi";
+// import { storeResponse } from "../../server/utils/mutations";
+// import { getResponse } from "../../server/utils/queries";
 
 
 // Global Theme Settings
@@ -62,9 +63,9 @@ ReactDOM.render(
     <CssBaseline />
     <BrowserRouter>
       <App
-        openAi={openAi}
-        storeResponse={storeResponse}
-        getResponse={getResponse}
+        // openAi={openAi}
+        // storeResponse={storeResponse}
+        // getResponse={getResponse}
       />
     </BrowserRouter>
   </ThemeProvider>,
@@ -72,9 +73,9 @@ ReactDOM.render(
 );
 
 // Send a request to the OpenAI API
-const response = sendRequest(text, conversationId);
+// const response = sendRequest(text, conversationId);
 // Handle the response from the OpenAI API
-const responseText = handleResponse(response);
+// const responseText = handleResponse(response);
 
 
 reportWebVitals()
