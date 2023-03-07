@@ -13,7 +13,7 @@ export default function Heading() {
       }}>
         <Typography align="center" variant="h2" color='#F2A2E8'
         sx={{
-          fontWeight: 'bold'
+          fontWeight: 'bold',
         }}
         >
           Upgrade your Imagination.
