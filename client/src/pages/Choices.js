@@ -7,6 +7,7 @@ import {
     FormControlLabel,
     Radio,
     Paper,
+    TextField,
     } from '@mui/material'
 import Background from '../assets/darkest-background.png'
 import DetailedAppBar from '../components/DetailedAppBar'
@@ -20,8 +21,8 @@ export default function Choices() {
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
-              width: '99vw',
               minHeight: '230vh',
+              justifyContent: 'center',
             }
           }
         >
@@ -29,22 +30,70 @@ export default function Choices() {
 
             {/* At some point, we should probably makes these components -- T */}
 
-            {/* Genres */}
+            {/* 1. Character Name */}
             <Paper elevation={24}
             sx={{
                 bgcolor: '#11153A',
-                padding: 5,
+                paddingTop: 6,
+                paddingBottom: 6,
+                paddingLeft: 10,
                 width: '50%',
                 marginTop: 5,
-                marginLeft: 20,
-                marginRight: 20,
-                borderRadius: 5,
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                borderRadius: 10,
                 }}>
                 <FormControl>
-                    <FormLabel color='primary' id="demo-radio-buttons-group-label">1. What kind of story would you like to tell?</FormLabel>
+                    <FormLabel
+                    sx={{
+                        fontSize: 18,
+                        color: '#fff',
+                        paddingLeft: 2,
+                        marginBottom: 1,
+                        borderLeft: 1,
+                        borderColor: '#7DF9FF'}}>
+                       What is your main character's name?
+                    </FormLabel>
+                    <TextField
+                        variant='filled'
+                        color='primary'
+                        margin="normal"
+                        fullWidth
+                        id="character_name"
+                        name="character_name"
+                        autoFocus={true}
+                        placeholder='ex. Aragorn'
+                        required={true}
+                    />
+                </FormControl>
+            </Paper>
+
+            {/* 2. Genre */}
+            <Paper elevation={24}
+            sx={{
+                bgcolor: '#11153A',
+                paddingTop: 6,
+                paddingBottom: 6,
+                paddingLeft: 10,
+                width: '50%',
+                marginTop: 5,
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                borderRadius: 10,
+                }}>
+                <FormControl>
+                    <FormLabel
+                    sx={{
+                        fontSize: 18,
+                        color: '#fff',
+                        marginBottom: 1,
+                        paddingLeft: 2,
+                        borderLeft: 1,
+                        borderColor: '#7DF9FF'}}>
+                        What kind of story would you like to tell?
+                    </FormLabel>
                     <RadioGroup
-                        aria-labelledby="demo-radio-buttons-group-label"
-                        defaultValue="Fantasy"
+                        aria-labelledby="genre-group-choices"
                         name="genre-choices"
                     >
                         <FormControlLabel value="Fantasy" control={<Radio />} label="Fantasy" />
