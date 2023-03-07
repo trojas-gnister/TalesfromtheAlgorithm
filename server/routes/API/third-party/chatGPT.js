@@ -1,6 +1,6 @@
 const express = require("express");
 const graphqlHTTP = require("express-graphql");
-const typeDefs = require("./graphQL/typeDef.js.js");
+const typeDefs = require("./graphQL/typeDefs.js");
 
 const app = express();
 
