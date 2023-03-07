@@ -92,14 +92,3 @@ startServer().then (() => {
   });
 });
 
-// add addUser mutation resolver
-const Mutation = {
-  addUser: async (_, args) => {
-    const { username, password } = args;
-    const user = new User({ username, password });
-    await user.save();
-    return user;
-  },
-};
-
-module.exports = { server, Mutation };
