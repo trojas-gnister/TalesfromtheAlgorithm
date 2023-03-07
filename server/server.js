@@ -1,13 +1,12 @@
-const dotEnv = require("dotenv").config();
+require("dotenv").config();
 const key = process.env.API_KEY;
 
 // mongoDB Database connect
 const mongoDB_connect = require("./config/db/connection.js");
 
-// graphQL tools import && then updating instance of apollo-server
+// graphQL - apollo - tools
 const { apolloServerExpress, typeDefs, resolvers } = require("./graphQL");
 const graphQL = apolloServerExpress({ typeDefs, resolvers });
-// takes tools out of work bag first before putting back "builds" once the app is "built" with initialized "api_state"
 
 // express
 const express = require("express");
@@ -23,6 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
+// connects port
 app.listen(PORT, () => {
   mongoDB_connect();
   graphQL.applyMiddleware({ app });

@@ -1,8 +1,8 @@
-const { ApolloServerExPress } = require("apollo-server-express");
+const { ApolloServerExpress } = require("apollo-server-express");
 const typeDefs = require("./typeDefs");
 const resolvers = require("./resolvers");
 
-const apolloServerExpress = new ApolloServerExPress({
+const apolloServerExpress = new ApolloServerExpress({
   typeDefs,
   resolvers,
 });
@@ -16,6 +16,6 @@ apolloServerExpress
     console.log("Error starting server: ", error);
   });
 
-module.exports = { typeDefs, resolvers };
+export default { typeDefs, resolvers }
 
 // tools of graphQL library (modules) exported to server file to be used by exprees host . the express host does its thing either at the view (tables) or the database (kitchen). Once the tools have been used on either client or server sided API, those tools return a new state and new rendered component
