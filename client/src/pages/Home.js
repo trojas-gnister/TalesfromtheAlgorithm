@@ -2,7 +2,7 @@ import React from 'react';
 import Heading from '../components/Heading'
 import Background from '../assets/darkest-background.png';
 import { Container } from '@mui/system';
-import AppBar from '../components/AppBar'
+import DetailedAppBar from '../components/DetailedAppBar'
 import StartButton from '../components/StartButton'
 import ThreeCards from '../components/ThreeCards';
 
@@ -21,7 +21,7 @@ export default function Home() {
           }
         }
       >
-        <AppBar />
+        <DetailedAppBar />
         <Heading />
         <StartButton />
         <ThreeCards />

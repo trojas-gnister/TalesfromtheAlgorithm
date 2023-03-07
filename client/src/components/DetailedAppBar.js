@@ -8,7 +8,7 @@ import Icon from '@mui/material/Icon';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.png';
 
-export default function ButtonAppBar() {
+export default function DetailedAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>

@@ -6,9 +6,10 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-import Donations from "./pages/Donations";
-// import { PaymentSuccess } from "./pages/PaymentSuccess";
+import Donations from "./pages/donations";
+// import PaymentSuccess from "./pages/PaymentSuccess";
 import CheckoutForm from "./pages/checkoutForm";
+import Choices from "./pages/Choices";
 
 
 const App = ({ openAi, storeResponse, getResponse }) => {
@@ -37,8 +38,9 @@ const App = ({ openAi, storeResponse, getResponse }) => {
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<SignUp />} />
           <Route path="/donations" element={<Donations />} />
-          {/* <Route path="/paymentSuccessful" element={<Completion />} /> */}
+          <Route path="/Choices" element={<Choices />} />
           <Route path="/checkoutForm" element={<CheckoutForm />} />
+          {/* <Route path="/PaymentSuccess" element={<PaymentSuccess />} /> */}
         </Routes>
       {/* <input type="text" onChange={handleSendRequest} />
       <button onClick={handleGetResponse}>Get Response</button>
