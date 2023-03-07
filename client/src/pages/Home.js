@@ -1,25 +1,26 @@
 import React from 'react';
-import { Typography } from '@mui/material';
-import Image from '../../assets/DALLE-background.png';
+import Heading from '../components/Heading'
+import Background from '../assets/DALLE-background.png';
 import { Container } from '@mui/system';
+import AppBar from '../components/AppBar'
+import StartButton from '../components/StartButton'
 
-const Home = () => {
+export const Home = () => {
   return (
     <Container maxWidth={false} disableGutters>
           <div
       style={{
-        backgroundImage: `url(${Image})`,
+        backgroundImage:`url(${Background})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        width: '100vw',
+        width: '99vw',
         minHeight: '230vh',
       }}
     >
-      <Typography variant="h1">Home Page</Typography>
-      <Typography variant="body1">
-        This is the home page of your app!
-      </Typography>
+      <AppBar />
+      <Heading />
+      <StartButton />
     </div>
 
     </Container>
@@ -27,4 +28,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+
