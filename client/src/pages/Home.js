@@ -1,12 +1,12 @@
 import React from 'react';
-import Heading from './components/Heading'
-import Background from './assets/darkest-background.png';
+import Heading from '../components/Heading'
+import Background from '../assets/darkest-background.png';
 import { Container } from '@mui/system';
-import AppBar from './components/AppBar'
-import StartButton from './components/StartButton'
-import ThreeCards from './components/ThreeCards';
+import AppBar from '../components/AppBar'
+import StartButton from '../components/StartButton'
+import ThreeCards from '../components/ThreeCards';
 
-const Home = () => {
+export default function Home() {
   return (
     <Container maxWidth={false} disableGutters>
       <div
@@ -31,5 +31,3 @@ const Home = () => {
   );
 };
 
-
-export default Home;

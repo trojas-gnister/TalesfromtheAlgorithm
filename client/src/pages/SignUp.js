@@ -4,7 +4,7 @@ import Image from '../assets/DALLE-bottom-background.jpg';
 import SignUpForm from '../components/SignUpForm'
 import SimpleAppBar from '../components/SimpleAppBar';
 
-export const SignUp = () => {
+export default function SignUp() {
     return (
         <Container maxWidth={true} disableGutters>
             <div
