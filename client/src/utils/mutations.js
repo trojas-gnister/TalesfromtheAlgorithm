@@ -71,3 +71,13 @@ export const DELETE_IMAGE_FROM_PAGE_MUTATION = gql`
     }
   }
 `;
+
+export const ADD_USER = gql`
+  mutation AddUser($username: String!, $password: String!) {
+    addUser(username: $username, password: $password) {
+      username
+      password
+    }
+  }
+`;
+

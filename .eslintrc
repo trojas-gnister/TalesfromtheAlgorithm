@@ -14,6 +14,9 @@
   },
   "plugins": ["react"],
   "rules": {
+    "react/forbid-foreign-prop-types": "error",
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-duplicate-props": "error",
     "react/jsx-no-target-blank": "error",
     "react/jsx-no-undef": "error",
     "react/jsx-pascal-case": "error",
@@ -24,7 +27,9 @@
     "react/require-render-return": "error",
     "react/style-prop-object": "error",
     "react/jsx-uses-vars": "error",
-    "react/jsx-uses-react": "error"
+    "react/jsx-uses-react": "error",
+    "no-unused-expressions": "error",
+    "no-undef": "error"
   }
 }
 

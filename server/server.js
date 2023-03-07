@@ -1,20 +1,20 @@
-require('dotenv').config();
+const dotEnv = require('dotenv').config();
 const key = process.env.API_KEY;
+
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const { ApolloServer } = require("apollo-server");
-const typeDefs = require('./graphQL/typeDefs');
-const User = require('./models/User');
-const  resolvers  = require("./graphQL/resolvers");
-const PORT = process.env.PORT || 3001;
 
+const bodyParser = require("body-parser");
+
+const { ApolloServer } = require("apollo-server");
+
+
+const PORT = process.env.PORT || 3001;
 const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
 });
-
 
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
@@ -25,7 +25,6 @@ app.get('/config', (req, res) => {
     publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
   })
 })
-
 app.post("/create-payment-intent", async (req, res) => {
   const paymentIntent = await Stripe.PaymentIntentsResource.create({
     currency: 'usd',
@@ -86,14 +85,6 @@ startServer().then (() => {
   });
 });
 
-// add addUser mutation resolver
-const Mutation = {
-  addUser: async (_, args) => {
-    const { username, password } = args;
-    const user = new User({ username, password });
-    await user.save();
-    return user;
-  },
-};
+
 
 module.exports = { server, Mutation };
