@@ -11,8 +11,12 @@ export default function Heading() {
         marginBottom: 1.5,
         alignItems: 'center'
       }}>
-        <Typography align="center" variant="h2" color='#F2A2E8'>
-          Dream like never before.
+        <Typography align="center" variant="h2" color='#F2A2E8'
+        sx={{
+          fontWeight: 'bold'
+        }}
+        >
+          Upgrade your Imagination.
         </Typography>
       </Container>
 

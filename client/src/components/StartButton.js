@@ -11,7 +11,7 @@ export default function StartButton() {
         width: 200,
         height: 60,
       }}
-      >Start</Button>
+      >Once Upon a Time . . .</Button>
     </div>
     
   );
