@@ -22,8 +22,6 @@ export default function Choices() {
               backgroundPosition: 'center',
               width: '99vw',
               minHeight: '230vh',
-              alignItems: 'center',
-              justifyContent: 'center',
             }
           }
         >
@@ -36,7 +34,8 @@ export default function Choices() {
             sx={{
                 bgcolor: '#11153A',
                 padding: 5,
-                width: 'vw',
+                width: '50%',
+                marginTop: 5,
                 marginLeft: 20,
                 marginRight: 20,
                 borderRadius: 5,

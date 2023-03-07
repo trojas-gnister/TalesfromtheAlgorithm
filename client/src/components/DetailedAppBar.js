@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Icon from '@mui/material/Icon';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/logo.png';
+import Logo from '../assets/pink-logo.png';
 
 export default function DetailedAppBar() {
   return (
