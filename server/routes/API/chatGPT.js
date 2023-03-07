@@ -1,13 +1,13 @@
 const express = require("express");
 const graphqlHTTP = require("express-graphql");
-const schema = require("./schema/typeDef.js");
+const typeDefs = require("./graphQL/typeDef.js.js");
 
 const app = express();
 
 app.use(
   "/api/chatGPT",
   graphqlHTTP({
-    schema,
+    typeDefs,
     graphiql: true,
   })
 );

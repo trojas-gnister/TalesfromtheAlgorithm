@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -7,11 +7,16 @@ import reportWebVitals from './reportWebVitals'
 import App from './App'
 import './index.css'
 
+// openAi_API_request-response_handlers
+import { sendRequest, handleResponse } from "./utils/openAi";
+import { openAi } from "./utils/openAi";
+import { storeResponse } from "./utils/mutations";
+import { getResponse } from "./utils/queries";
+
+
 // Global Theme Settings
 import darkScrollbar from '@mui/material/darkScrollbar';
-
-// Custom Dark Theme values //
-
+// Custom Dark Theme values
 // white - #fff
 // light gray - #D3D3D3
 // pink - #F2A2E8
@@ -20,7 +25,6 @@ import darkScrollbar from '@mui/material/darkScrollbar';
 // dark purple - #11153A
 // vibrant purple color - #a100f2
 // electric blue - #7DF9FF
-
 const darkTheme = createTheme({
   palette: {
       primary: {
@@ -52,19 +56,25 @@ const darkTheme = createTheme({
 
 });
 
+
 ReactDOM.render(
   <ThemeProvider theme={darkTheme}>
     <CssBaseline />
     <BrowserRouter>
-      <App />
+      <App
+        openAi={openAi}
+        storeResponse={storeResponse}
+        getResponse={getResponse}
+      />
     </BrowserRouter>
   </ThemeProvider>,
-
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
+// Send a request to the OpenAI API
+const response = sendRequest(text, conversationId);
+// Handle the response from the OpenAI API
+const responseText = handleResponse(response);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals()
