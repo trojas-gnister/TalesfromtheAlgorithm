@@ -10,7 +10,8 @@ import './index.css'
 // Global Theme Settings
 import darkScrollbar from '@mui/material/darkScrollbar';
 
-// Custom Dark Theme values
+// Custom Dark Theme values //
+
 // white - #fff
 // light gray - #D3D3D3
 // pink - #F2A2E8
@@ -18,10 +19,12 @@ import darkScrollbar from '@mui/material/darkScrollbar';
 // green - #00AB4D
 // dark purple - #11153A
 // vibrant purple color - #a100f2
+// electric blue - #7DF9FF
+
 const darkTheme = createTheme({
   palette: {
       primary: {
-        main: '#00AB4D',
+        main: '#F2A2E8',
       },
       secondary: {
         main: '#fff',

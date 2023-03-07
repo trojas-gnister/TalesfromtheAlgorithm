@@ -1,9 +1,10 @@
 import React from 'react';
 import Heading from '../components/Heading'
-import Background from '../assets/DALLE-background.png';
+import Background from '../assets/darkest-background.png';
 import { Container } from '@mui/system';
 import AppBar from '../components/AppBar'
 import StartButton from '../components/StartButton'
+import ThreeCards from '../components/ThreeCards';
 
 export const Home = () => {
   return (
@@ -21,6 +22,7 @@ export const Home = () => {
       <AppBar />
       <Heading />
       <StartButton />
+      <ThreeCards />
     </div>
 
     </Container>
