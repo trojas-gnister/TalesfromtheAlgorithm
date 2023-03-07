@@ -1,5 +1,5 @@
 require('dotenv').config();
-const apiKey = process.env.API_KEY;
+const key = process.env.API_KEY;
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -39,7 +39,6 @@ app.post("/create-payment-intent", async (req, res) => {
 
 async function startServer() {
   app.use(express.static("public"));
-
   let options = {
     temperature: 0.7,
     max_tokens: 256,
@@ -50,21 +49,16 @@ async function startServer() {
     model: "text-davinci-003",
     stop: "",
   }; //can we modularize this out of the srver file as an idependent file or be in another existing file within the server directory eg. schema, model
-
   const { default: ChatGPT } = await import("chatgpt-official");
-
-  let bot = new ChatGPT(apiKey, options);
-
+  let bot = new ChatGPT(key, options);
   let response = await bot.ask(
     "think of 5 funny and clever names about generative AI and storys. the AI will be fed prompts by the user and create custom stories. make it edgar allan poe themed. thanks "
   );
   console.log(response);
-
   let conversationId2 = "another conversation name";
   let response2 = await bot.ask("Hello?", conversationId2);
   console.log(response2);
 }
-
 startServer().then (() => {
   mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1/algoDB", {
     useNewUrlParser: true,
@@ -75,7 +69,7 @@ startServer().then (() => {
       console.log(`Server running at ${res.url}`);
     });
   });
-  
+
   app.listen(PORT, () => {
     console.log(
       `
