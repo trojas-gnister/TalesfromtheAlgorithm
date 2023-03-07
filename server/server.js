@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({path: '../.env'})
 const apiKey = process.env.API_KEY;
 const express = require("express");
 const mongoose = require("mongoose");
