@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from '@mui/material'
-import Background from '../assets/DALLE-bottom-background.jpg';
+import Image from '../assets/darkest-background.png';
 import LoginForm from '../components/LoginForm';
 import SimpleAppBar from '../components/SimpleAppBar';
 
