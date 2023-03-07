@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Payment } from './pages/donations'
-import { Completion } from './pages/paymentSuccessful'
+import  Payment  from './pages/donations'
+import  Completion  from './pages/paymentSuccessful'
 
 // imported webpages
 import { Home } from './pages/Home'

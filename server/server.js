@@ -5,15 +5,16 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const { ApolloServer } = require("apollo-server");
 const typeDefs = require('./graphQL/typeDefs');
-
+const User = require('./models/User');
 const  resolvers  = require("./graphQL/resolvers");
-
 const PORT = process.env.PORT || 3001;
+
 const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
 });
+
 
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
@@ -91,3 +92,14 @@ startServer().then (() => {
   });
 });
 
+// add addUser mutation resolver
+const Mutation = {
+  addUser: async (_, args) => {
+    const { username, password } = args;
+    const user = new User({ username, password });
+    await user.save();
+    return user;
+  },
+};
+
+module.exports = { server, Mutation };
