@@ -20,7 +20,12 @@ export default function Choices() {
   const [generatedText, setGeneratedText] = useState('');
 
   const handleClick = () => {
-    fetch('http://localhost:3001/api/completion')
+    fetch('http://localhost:3001/api/completion', {
+      mode: 'cors',
+      headers: {
+        'Access-Control-Allow-Origin':'*'
+      }
+    })
       .then(response => response.json())
       .then(data => setGeneratedText(data.text)) // set the generatedText state variable
       .catch(error => console.error(error));
