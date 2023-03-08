@@ -18,10 +18,14 @@ export default function PowerHeading() {
                 sx={{
                     color: '#F2A2E8',
                     marginBottom: 1,
+                    fontFamily: 'Eczar'
                 }}>
                     Powered by magic runes, ancient spells
                 </Typography>
-                <Typography align="center" variant="h4">
+                <Typography align="center" variant="h4"
+                sx={{
+                    fontFamily: 'Eczar'
+                }}>
                     . . . and a little bit of AI
                 </Typography>
             </Container>

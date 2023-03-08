@@ -5,10 +5,10 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@fontsource/capriola": "^4.5.8",
     "@fontsource/eczar": "^4.5.8",
     "@fontsource/pt-serif": "^4.5.7",
     "@fontsource/roboto": "^4.5.8",
+    "@fontsource/source-sans-pro": "^4.5.8",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.12",
     "@testing-library/jest-dom": "^5.16.5",

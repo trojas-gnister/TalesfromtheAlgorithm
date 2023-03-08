@@ -16,32 +16,35 @@ export default function DetailedAppBar() {
 
           {/* Logo */}
         <Icon
-            sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+            sx={{ display: { xs: 'flex', md: 'flex'}}}
             >
-                <img src={Logo} height={25} width={25} alt='Dream AI logo'/>
+                <img src={Logo} height={20} width={20} alt='Dream AI logo'/> m
             </Icon>
-          <Typography variant="h6" component="div"
+          <Typography variant="h5" component="div"
           sx={{
             flexGrow: 1, 
             color: "#fff",
-            fontFamily: 'Capriola'}}>
+            fontFamily: 'Eczar',
+            fontWeight: 'bold'}}>
             DreamAI
           </Typography>
 
           {/* Buttons */}
-          <Button variant='outlined' component={Link} to="/login"
+          <Button variant='text' component={Link} to="/login"
           style={{
             textTransform: 'none',
             color: 'white',
-            fontFamily: 'Capriola',
+            fontFamily: 'Source Sans Pro',
             marginRight: 10,
+            fontSize: 18,
           }}
           >Login</Button>
-          <Button variant='outlined' component={Link} to="/signup"
+          <Button variant='text' component={Link} to="/signup"
           style={{
             textTransform: 'none',
             color: 'white',
-            fontFamily: 'Capriola'
+            fontFamily: 'Source Sans Pro',
+            fontSize: 18,
           }}
           >Sign Up</Button>
         </Toolbar>
