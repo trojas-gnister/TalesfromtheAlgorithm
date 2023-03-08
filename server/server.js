@@ -4,8 +4,10 @@ const key = process.env.API_KEY;
 // mongoDB Database connect
 const mongoDB_connect = require("./config/db/connection.js");
 
-// graphQL - apollo - tools
-const { typeDefs, resolvers } = require("./graphQL");
+// Apollo & GraphQL
+const { ApolloServer, gql } = require("apollo-server");
+const typeDefs = require("./graphQL/typeDefs");
+const resolvers = require("./graphQL/resolvers");
 
 // express
 const express = require("express");
@@ -19,11 +21,25 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
-// routes
-app.get("/config", (req, res) => {
-  res.send({
-    publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
-  });
+// connect to Apollo
+const server = new ApolloServer({ typeDefs, resolvers });
+server.listen().then(({ url }) => {
+  console.log(`Server ready at ${url}`);
+});
+
+// connects port
+app.listen(PORT, () => {
+  mongoDB_connect();
+  console.log(`
+    ==============================
+    "Online at ${PORT}, Server is."
+                __.-._
+                '-._"7'
+                  /'.-c
+                  |  /T
+                _)_/LI
+    ==============================
+  `);
 });
 
 app.post("/create-payment-intent", async (req, res) => {
