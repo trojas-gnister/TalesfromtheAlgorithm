@@ -39,9 +39,9 @@ const darkTheme = createTheme({
         primary: '#fff',
         secondary: '#D3D3D3',
       },
-}
+},
 
-  components: {
+components: {
     MuiCssBaseline: {
       styleOverrides: (themeParam) => ({
         body: themeParam.palette.mode === 'dark' ? darkScrollbar() : null,

@@ -1,4 +1,4 @@
-import { Grid, Paper, Typography, Container } from '@mui/material'
+import { Paper, Container } from '@mui/material'
 
 export default function ThreeCards() {
   return (

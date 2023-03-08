@@ -10,6 +10,7 @@ import Donations from "./pages/donations";
 // import PaymentSuccess from "./pages/PaymentSuccess";
 import CheckoutForm from "./pages/checkoutForm";
 import Choices from "./pages/Choices";
+import Story from "./pages/Story"
 
 
 const App = ({ openAi, storeResponse, getResponse }) => {
@@ -40,6 +41,7 @@ const App = ({ openAi, storeResponse, getResponse }) => {
           <Route path="/donations" element={<Donations />} />
           <Route path="/Choices" element={<Choices />} />
           <Route path="/checkoutForm" element={<CheckoutForm />} />
+          <Route path="/Story" element={<Story />} />
           {/* <Route path="/PaymentSuccess" element={<PaymentSuccess />} /> */}
         </Routes>
       {/* <input type="text" onChange={handleSendRequest} />
