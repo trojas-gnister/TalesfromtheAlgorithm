@@ -17,7 +17,6 @@ const sendRequest = async (body) => {
   // Return the response data
   return await response.json();
 };
-
 // Function to handle the response from the OpenAI API
 const handleResponse = (response) => {
   // Extract the response text from the response data
@@ -25,8 +24,19 @@ const handleResponse = (response) => {
   // Return the response text
   return responseText;
 };
-
 export default {
   sendRequest,
   handleResponse,
 };
+
+/*
+
+*
+fetch API to make HTTP(url) requests to the OpenAI API.
+*
+sendRequest` sends a request to the OpenAI API and returns a Promise that resolves to the response data.
+*
+handleResponse` takes the response data and extracts the response text from it.
+*
+
+*/

@@ -14,24 +14,6 @@ import Story from "./pages/Story"
 
 
 const App = ({ openAi, storeResponse, getResponse }) => {
-//   const [conversationId, setConversationId] = useState(null);
-//   const handleSendRequest = (text) =>
-//   {
-//     // response to be post-request processing
-
-//     const response = openAi(text, conversationId);
-//     setConversationId(response.conversationId);
-//     // response as seen by user
-
-//     const responseText = handleResponse(response);
-//       setResponseText(responseText);
-//       storeResponse(responseText);
-//   };
-//   const [responseText, setResponseText] = useState(null);
-//   const handleGetResponse = () => {
-//     const responseText = getResponse();
-//     setResponseText(responseText);
-  // };
   return (
     <div className="App">
         <Routes>
@@ -44,9 +26,6 @@ const App = ({ openAi, storeResponse, getResponse }) => {
           <Route path="/Story" element={<Story />} />
           {/* <Route path="/PaymentSuccess" element={<PaymentSuccess />} /> */}
         </Routes>
-      {/* <input type="text" onChange={handleSendRequest} />
-      <button onClick={handleGetResponse}>Get Response</button>
-      {responseText && <p>{responseText}</p>} */}
     </div>
   );
 };

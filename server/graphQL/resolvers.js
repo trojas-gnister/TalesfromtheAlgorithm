@@ -9,7 +9,6 @@ const {
   DELETE_USER,
 } = require("./index.js");
 const openai = require("./graphQL/openAi.js");
-
 const resolvers = {
   Query: {
     user: async (parent, { id }, context) => {
@@ -76,7 +75,6 @@ const resolvers = {
     },
   },
 };
-
 module.exports = resolvers;
 
 /*

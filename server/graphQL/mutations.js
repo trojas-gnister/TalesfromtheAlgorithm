@@ -8,5 +8,4 @@ const storeResponse = (responseText) => {
 
   response.save();
 };
-
 export default storeResponse;
