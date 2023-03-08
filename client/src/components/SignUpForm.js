@@ -4,11 +4,7 @@ import EmojiPeopleRoundedIcon from '@mui/icons-material/EmojiPeopleRounded';
 import { Box } from '@mui/system';
 import * as React from 'react';
 
-
-
-
 export default function LoginForm() {
-
     return (
         <Container component='main' maxWidth='xs'>
             <Paper

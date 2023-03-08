@@ -4,21 +4,28 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Icon from '@mui/material/Icon';
-import Logo from '../assets/logo.png';
+import Logo from '../assets/pink-logo.png';
 
 export default function SimpleAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
+      <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none', paddingTop: 5}}>
         <Toolbar>
-            <Icon
+
+          {/* Logo */}
+          <Icon
             sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
             >
                 <img src={Logo} height={25} width={25} alt='Dream AI logo'/>
             </Icon>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} color="#fff">
+          <Typography variant="h6" component="div"
+          sx={{
+            flexGrow: 1, 
+            color: "#fff",
+            fontFamily: 'Capriola'}}>
             DreamAI
           </Typography>
+
         </Toolbar>
       </AppBar>
     </Box>
