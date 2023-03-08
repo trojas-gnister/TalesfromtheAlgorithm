@@ -9,7 +9,7 @@ export default function ThreeCards() {
 
             {/* First */}
         <Grid item xs={2}>
-            <Paper elevation={24} sx={{ padding: 2, backgroundColor: '#11153A', borderRadius='25'}}>
+            <Paper elevation={24} sx={{ padding: 2, backgroundColor: '#11153A'}}>
                 <Typography variant='h4'>
                     Title Text
                 </Typography>

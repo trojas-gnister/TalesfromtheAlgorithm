@@ -64,9 +64,9 @@ export default function LoginForm() {
                     </Box>
                     <Button
                         type="submit"
-                        fullWidth
-                        variant="contained"
-                        sx={{ mt: 3, mb: 2 }}
+                        fullWidth={true}
+                        variant="outlined"
+                        sx={{ mt: 3, mb: 2, height: 50}}
                     >
                         LOGIN
                     </Button>

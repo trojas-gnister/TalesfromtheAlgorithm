@@ -1,6 +1,6 @@
-const { gql } = require('apollo-server-express')
+const { gql } = require('apollo-server-express');
 
-module.exports = gql`
+const typeDefs = gql`
 type User {
   username: String
   password: String
@@ -12,6 +12,9 @@ type Query {
 
 type Mutation {
   addUser(username: String, password: String): User
+  updateUser(id: ID!, username: String, password: String): User
+  deleteUser(id: ID!): User
 }
 `
-// typeDefs select required data out of the entire data that was mapped out by resolvers
+
+module.exports = typeDefs;
