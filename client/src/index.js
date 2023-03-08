@@ -39,7 +39,7 @@ const darkTheme = createTheme({
         primary: '#fff',
         secondary: '#D3D3D3',
       },
-},
+}
 
   components: {
     MuiCssBaseline: {
