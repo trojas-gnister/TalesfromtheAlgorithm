@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/completion": {
+      "name": "/completion",
+      "lambdaFunction": "talesfromthealgoritha0d66269",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

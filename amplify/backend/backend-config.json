@@ -1,0 +1,43 @@
+{
+  "api": {
+    "talesAPI": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "talesfromthealgoritha0d66269"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "talesfromthealgoritha0d66269": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_talesfromthealgoritha0d66269_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "talesfromthealgoritha0d66269"
+        }
+      ]
+    },
+    "AMPLIFY_function_talesfromthealgoritha0d66269_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "talesfromthealgoritha0d66269"
+        }
+      ]
+    }
+  }
+}

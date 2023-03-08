@@ -20,7 +20,7 @@ export default function Choices() {
   const [generatedText, setGeneratedText] = useState('');
 
   const handleClick = () => {
-    fetch('http://localhost:3001/completion', {
+    fetch('https://s7mnls94ja.execute-api.us-east-1.amazonaws.com/staging/completion', {
       mode: 'cors',
       headers: {
         'Access-Control-Allow-Origin':'*'

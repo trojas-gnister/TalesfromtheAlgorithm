@@ -1,0 +1,26 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifybae276f00ae94-staging-230325-authRole",
+      "UnauthRoleArn": "arn:aws:iam::435130521534:role/amplify-amplifybae276f00ae94-staging-230325-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::435130521534:role/amplify-amplifybae276f00ae94-staging-230325-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-amplifybae276f00ae94-staging-230325-deployment",
+      "UnauthRoleName": "amplify-amplifybae276f00ae94-staging-230325-unauthRole",
+      "StackName": "amplify-amplifybae276f00ae94-staging-230325",
+      "StackId": "arn:aws:cloudformation:us-east-1:435130521534:stack/amplify-amplifybae276f00ae94-staging-230325/6e9277c0-be05-11ed-8cbd-0e62e42c59bd",
+      "AmplifyAppId": "d1pvujnt4zx0rz"
+    },
+    "categories": {
+      "function": {
+        "talesfromthealgoritha0d66269": {
+          "deploymentBucketName": "amplify-amplifybae276f00ae94-staging-230325-deployment",
+          "s3Key": "amplify-builds/talesfromthealgoritha0d66269-4471466255385a353378-build.zip"
+        }
+      },
+      "api": {
+        "talesAPI": {}
+      }
+    }
+  }
+}
