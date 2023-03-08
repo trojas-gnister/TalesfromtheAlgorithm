@@ -1,6 +1,3 @@
-//.env 
-require("dotenv").config();
-
 // express
 const express = require("express");
 const app = express();
@@ -33,7 +30,6 @@ client.send(
     secret = response.SecretString;
     const secretObj = JSON.parse(secret);
     const apiKey = secretObj.REACT_APP_BUILD_ENV;
-    console.log(apiKey);
     const configuration = new Configuration({
       apiKey: apiKey,
     });

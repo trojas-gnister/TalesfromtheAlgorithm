@@ -1,7 +1,3 @@
-
-
-
-
 // mongoDB Database connect
 const mongoDB_connect = require("./config/db/connection.js");
 
@@ -12,7 +8,6 @@ const resolvers = require("./graphQL/resolvers");
 
 // express
 const express = require("express");
-// const router = require("express-router")
 const PORT = process.env.PORT || 3001;
 const bodyParser = require("body-parser");
 const app = express();
