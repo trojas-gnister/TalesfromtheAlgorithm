@@ -1,16 +1,25 @@
 import React from 'react';
-import Heading from '../components/Heading'
+
+// MUI Components
+import { Container } from '@mui/system';
+
+// Background Images
 import topBackground from '../assets/DARK-top-background.png';
 import bottomBackground from '../assets/DARK-bottom-background.png'
-import { Container } from '@mui/system';
+
+// Custom Components
+import Heading from '../components/Heading'
 import DetailedAppBar from '../components/DetailedAppBar'
 import StartButton from '../components/StartButton'
 import ThreeCards from '../components/ThreeCards';
 import DonateBtn from '../components/donationBtn';
+import PowerHeader from '../components/PowerHeader';
+
 
 export default function Home() {
   return (
-  <div>
+  <div
+  sx={{ colorScheme: 'dark'}}>
         <Container maxWidth={false} disableGutters>
       <div
         style={
@@ -44,6 +53,7 @@ export default function Home() {
           }
         }
       >
+        
 
       </div>
     </Container>
@@ -61,6 +71,7 @@ export default function Home() {
           }
         }
       >
+        <PowerHeader />
         <ThreeCards />
 
       </div>
