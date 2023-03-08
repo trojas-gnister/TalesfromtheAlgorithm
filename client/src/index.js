@@ -25,6 +25,7 @@ import darkScrollbar from '@mui/material/darkScrollbar';
 // mint green - #3EB489
 // green - #00AB4D
 // dark purple - #11153A
+// very purpely purple - #120043
 // vibrant purple color - #a100f2
 // electric blue - #7DF9FF
 const darkTheme = createTheme({

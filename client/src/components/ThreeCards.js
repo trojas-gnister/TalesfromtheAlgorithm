@@ -11,75 +11,114 @@ export default function ThreeCards() {
     <Container maxWidth={false} disableGutters
     sx={{ alignItems: 'center'}}
     >
-      <Grid container spacing={0.5}
-      sx={{ height: '30vh', marginTop: 40}}
+      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}
+      sx={{ height: '30vh', marginRight: 'auto', marginLeft: 'auto'}}
       >
+
+        {/* Paper 1 -------------- */}
+
+        <Grid item xs={4}>
         <Paper elevation={24}
             sx={{
-                bgcolor: '#11153A',
+                bgcolor: '#120043',
                 paddingTop: 6,
                 paddingBottom: 6,
-                paddingLeft: 10,
-                width: '23%',
-                marginTop: 5,
-                marginLeft: 'auto',
-                marginRight: 'auto',
+                paddingLeft: 4,
+                width: 300,
+                height: 325,
                 borderRadius: 10,
-                border: 1,
-                borderColor: '#7DF9FF',
+                opacity: 0.8,
                 }}>
-                  <Typography variant='h5'
+                  <Typography variant='h4'
                   sx={{
                     marginBottom: 2,
+                    marginTop: 0,
+                    fontWeight: 'bold'
                   }}>
-                    Weiner
+                    AI Story Generation
                   </Typography>
                   <Box
                   sx={{
-                    position: 'left',
+                    bgcolor: '#3EB489',
                     width: 100,
                     height: 5,
-                    bgcolor: '#7DF9FF',
-                  }}>
-
-                  </Box>
-
-
-
+                    marginBottom: 2,
+                  }}></Box>
                   <Typography variant='body1'>
-                    Body text
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   </Typography>
-
-
                 </Paper>
-      <Paper elevation={24}
+        </Grid>
+
+      {/* Paper 2 -------------- */}
+
+      <Grid item xs={4}>
+        <Paper elevation={24}
             sx={{
-                bgcolor: '#11153A',
+                bgcolor: '#120043',
                 paddingTop: 6,
                 paddingBottom: 6,
-                paddingLeft: 10,
-                width: '23%',
-                marginTop: 5,
-                marginLeft: 'auto',
-                marginRight: 'auto',
+                paddingLeft: 4,
+                width: 300,
+                height: 325,
                 borderRadius: 10,
-                border: 1,
-                borderColor: '#7DF9FF'
-                }}></Paper>
-      <Paper elevation={24}
+                opacity: 0.8,
+                }}>
+                  <Typography variant='h4'
+                    sx={{
+                      marginBottom: 2,
+                      marginTop: 0,
+                      fontWeight: 'bold'
+                    }}>
+                      Unleash your creativity.
+                  </Typography>
+                  <Box
+                  sx={{
+                    bgcolor: '#3EB489',
+                    width: 100,
+                    height: 5,
+                    marginBottom: 2,
+                  }}></Box>
+                  <Typography variant='body1'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
+                  </Typography>
+          </Paper>
+        </Grid>
+
+      {/* Paper 3 -------------- */}
+
+      <Grid item xs={4}>
+        <Paper elevation={24}
             sx={{
-                bgcolor: '#11153A',
+                bgcolor: '#120043',
                 paddingTop: 6,
                 paddingBottom: 6,
-                paddingLeft: 10,
-                width: '23%',
-                marginTop: 5,
-                marginLeft: 'auto',
-                marginRight: 'auto',
+                paddingLeft: 4,
+                width: 300,
+                height: 325,
                 borderRadius: 10,
-                border: 1,
-                borderColor: '#7DF9FF'
-                }}></Paper>
+                opacity: 0.8,
+                }}>
+                  <Typography variant='h4'
+                    sx={{
+                      marginBottom: 2,
+                      marginTop: 0,
+                      fontWeight: 'bold'
+                    }}>
+                      Other things and stuff.
+                  </Typography>
+                  <Box
+                  sx={{
+                    bgcolor: '#3EB489',
+                    width: 100,
+                    height: 5,
+                    marginBottom: 2,
+                  }}></Box>
+                  <Typography variant='body1'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
+                  </Typography>
+          </Paper>
+        </Grid>
 
       </Grid>
     </Container>
