@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   FormControl,
@@ -14,8 +14,18 @@ import {
 import { Link } from "react-router-dom";
 import Background from "../assets/darkest-background.png";
 import DetailedAppBar from "../components/DetailedAppBar";
+import StoryBox from "../components/StoryBox"; // import the StoryBox component
 
 export default function Choices() {
+  const [generatedText, setGeneratedText] = useState('');
+
+  const handleClick = () => {
+    fetch('http://localhost:3001/api/completion')
+      .then(response => response.json())
+      .then(data => setGeneratedText(data.text)) // set the generatedText state variable
+      .catch(error => console.error(error));
+  };
+
   return (
     <Container
       maxWidth={false}
@@ -32,8 +42,7 @@ export default function Choices() {
       <DetailedAppBar />
 
       {/* At some point, we should probably makes these components -- T */}
-
-      {/* 1. Character Name */}
+            {/* 1. Character Name */}
       <Paper
         elevation={24}
         sx={{
@@ -52,11 +61,9 @@ export default function Choices() {
           <FormLabel
             sx={{
                 bgcolor: '#11153A',
-                paddingTop: 6,
                 paddingBottom: 6,
                 paddingLeft: 10,
                 width: '50%',
-                marginTop: 5,
                 marginLeft: 'auto',
                 marginRight: 'auto',
                 borderRadius: 10,
@@ -84,7 +91,6 @@ export default function Choices() {
                     />
                 </FormControl>
             </Paper>
-
       {/* 2. Genre */}
       <Paper
         elevation={24}
@@ -122,7 +128,7 @@ export default function Choices() {
               control={<Radio />}
               label="Fantasy"
             />
-            <FormControlLabel
+                        <FormControlLabel
               value="Mystery"
               control={<Radio />}
               label="Mystery"
@@ -137,6 +143,7 @@ export default function Choices() {
               control={<Radio />}
               label="Romance"
             />
+            {/* add more genres here */}
           </RadioGroup>
         </FormControl>
       </Paper>
@@ -144,7 +151,7 @@ export default function Choices() {
         <Button
           variant="outlined"
           component={Link}
-          to="/Story"
+          onClick={handleClick} // added onClick handler
           sx={{
             textTransform: "none",
             marginTop: 20,
@@ -154,9 +161,11 @@ export default function Choices() {
         >
           Generate
         </Button>
+        <StoryBox generatedText={generatedText} /> {/* pass the generatedText state variable as a prop */}
       </Box>
 
       {/* end */}
     </Container>
   );
 }
+

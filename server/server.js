@@ -1,3 +1,13 @@
+
+//.env 
+require("dotenv").config();
+const apiKey = process.env.REACT_APP_BUILD_ENV;
+
+//chatGPT
+const { Configuration, OpenAIApi } = require("openai");
+
+
+
 // mongoDB Database connect
 const mongoDB_connect = require("./config/db/connection.js");
 
@@ -6,30 +16,53 @@ const { ApolloServer, gql } = require("apollo-server");
 const typeDefs = require("./graphQL/typeDefs");
 const resolvers = require("./graphQL/resolvers");
 
-// import ChatGPT initialization function
-const initializeChatGPT = require("./config/api/chatGPT");
-
 // express
 const express = require("express");
 // const router = require("express-router")
 const PORT = process.env.PORT || 3001;
 const bodyParser = require("body-parser");
 const app = express();
-//.router(); once routes are finished then can uncomment or else error will ensue
+const cors = require("cors");
+
+//openai config. need to setup fetch calls from frontend to grab response from chatgpt. test routes with insomnia
+const configuration = new Configuration({
+  apiKey: process.env.REACT_APP_BUILD_ENV,
+});
+const openai = new OpenAIApi(configuration);
+
 
 // vroom_vroom-express-initialize
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
 app.use(express.static("public"));
+
+app.get('/api/completion', async (req, res) => {
+  try {
+    const completion = await openai.createCompletion({
+      model: "text-davinci-003",
+      temperature: 0.7,
+      max_tokens: 256,
+      prompt: "Write me a fantasy story about STORYMAN. Make the story 2 sentences long.",
+    });
+    console.log(completion.data.choices[0].text)
+    // send the completion text as response
+    res.json({ text: completion.data.choices[0].text });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Something went wrong' });
+  }
+});
+
 
 // connect to Apollo
 const server = new ApolloServer({ typeDefs, resolvers });
 server.listen().then(({ url }) => {
   console.log(`Server ready at ${url}`);
-  // initialize ChatGPT after ApolloServer is ready
-  initializeChatGPT();
 });
+
+
 
 // connects port
 app.listen(PORT, () => {
