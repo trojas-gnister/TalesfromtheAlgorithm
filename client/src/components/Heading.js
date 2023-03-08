@@ -7,7 +7,7 @@ export default function Heading() {
       {/* Title Container */}
       <Container maxWidth={false} disableGutters
       sx={{
-        marginTop: 32,
+        marginTop: 31,
         marginBottom: 1.5,
         alignItems: 'center'
       }}>
