@@ -51,29 +51,39 @@ export default function Choices() {
         <FormControl>
           <FormLabel
             sx={{
-              fontSize: 18,
-              color: "#fff",
-              paddingLeft: 2,
-              marginBottom: 1,
-              borderLeft: 1,
-              borderColor: "#7DF9FF",
-            }}
-          >
-            What is your main character's name?
-          </FormLabel>
-          <TextField
-            variant="filled"
-            color="primary"
-            margin="normal"
-            fullWidth
-            id="character_name"
-            name="character_name"
-            autoFocus={true}
-            placeholder="ex. Aragorn"
-            required={true}
-          />
-        </FormControl>
-      </Paper>
+                bgcolor: '#11153A',
+                paddingTop: 6,
+                paddingBottom: 6,
+                paddingLeft: 10,
+                width: '50%',
+                marginTop: 5,
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                borderRadius: 10,
+                }}></FormLabel>
+                    <FormLabel
+                    sx={{
+                        fontSize: 18,
+                        color: '#fff',
+                        paddingLeft: 2,
+                        marginBottom: 1,
+                        borderLeft: 1,
+                        borderColor: '#7DF9FF'}}>
+                       What is your main character's name?
+                    </FormLabel>
+                    <TextField
+                        variant='filled'
+                        color='primary'
+                        margin="normal"
+                        fullWidth
+                        id="character_name"
+                        name="character_name"
+                        autoFocus={true}
+                        placeholder='ex. Aragorn'
+                        required={true}
+                    />
+                </FormControl>
+            </Paper>
 
       {/* 2. Genre */}
       <Paper
