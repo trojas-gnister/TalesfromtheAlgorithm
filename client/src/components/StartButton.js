@@ -12,7 +12,7 @@ export default function StartButton() {
         width: 200,
         height: 60,
       }}
-      >Once Upon a Time . . .</Button>
+      >Start Writing</Button>
     </div>
     
   );

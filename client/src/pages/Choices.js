@@ -8,7 +8,9 @@ import {
     Radio,
     Paper,
     TextField,
+    Button,
     } from '@mui/material'
+import { Link } from 'react-router-dom'
 import Background from '../assets/darkest-background.png'
 import DetailedAppBar from '../components/DetailedAppBar'
 
@@ -103,6 +105,14 @@ export default function Choices() {
                     </RadioGroup>
                 </FormControl>
             </Paper>
+            <Button variant="outlined" component={Link} to="/Story"
+                sx={{
+                textTransform: 'none',
+                marginTop: 20,
+                width: 200,
+                height: 60,
+            }}
+      >Generate</Button>
 
 
                 {/* end */}
