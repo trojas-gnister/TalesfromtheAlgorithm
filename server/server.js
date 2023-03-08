@@ -4,9 +4,12 @@ const key = process.env.API_KEY;
 // mongoDB Database connect
 const mongoDB_connect = require("./config/db/connection.js");
 
-// graphQL - apollo - tools
-const { apolloServerExpress, typeDefs, resolvers } = require("./graphQL");
-const graphQL = apolloServerExpress({ typeDefs, resolvers });
+// Apollo & GraphQL
+const { ApolloServer, gql } = require('apollo-server');
+const typeDefs = require("./graphQL/typeDefs");
+const resolvers = require("./graphQL/resolvers");
+
+
 
 // express
 const express = require("express");
@@ -22,10 +25,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
+// connect to Apollo
+const server = new ApolloServer({ typeDefs, resolvers });
+server.listen().then(({ url }) => {
+  console.log(`Server ready at ${url}`);
+});
+
 // connects port
 app.listen(PORT, () => {
   mongoDB_connect();
-  graphQL.applyMiddleware({ app });
   console.log(`
     ==============================
     "Online at ${PORT}, Server is."
