@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from '@mui/material'
-import Image from '../assets/darkest-background.png';
+import Background from '../assets/darkest-background.png';
 import SignUpForm from '../components/SignUpForm'
 import SimpleAppBar from '../components/SimpleAppBar';
 
