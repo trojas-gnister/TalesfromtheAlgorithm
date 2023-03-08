@@ -1,44 +1,40 @@
-
 //.env 
 require("dotenv").config();
-const apiKey = process.env.REACT_APP_BUILD_ENV;
 
-//chatGPT
+// Dependencies
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
 const { Configuration, OpenAIApi } = require("openai");
+const { ApolloServer } = require("apollo-server");
 
-
-
-// mongoDB Database connect
-const mongoDB_connect = require("./config/db/connection.js");
-
-// Apollo & GraphQL
-const { ApolloServer, gql } = require("apollo-server");
+// GraphQL
 const typeDefs = require("./graphQL/typeDefs");
 const resolvers = require("./graphQL/resolvers");
 
-// express
-const express = require("express");
-// const router = require("express-router")
-const PORT = process.env.PORT || 3001;
-const bodyParser = require("body-parser");
+// MongoDB Database connect
+const mongoDBConnect = require("./config/db/connection.js");
+
+// Initialize express app
 const app = express();
-const cors = require("cors");
+const PORT = process.env.PORT || 3001;
 
-//openai config. need to setup fetch calls from frontend to grab response from chatgpt. test routes with insomnia
-const configuration = new Configuration({
-  apiKey: process.env.REACT_APP_BUILD_ENV,
-});
-const openai = new OpenAIApi(configuration);
+// Configure OpenAI
+const openai = new OpenAIApi(
+  new Configuration({
+    apiKey: process.env.REACT_APP_BUILD_ENV,
+  })
+);
 
-
-// vroom_vroom-express-initialize
+// Middleware
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 app.use(express.static("public"));
 
-app.get('/api/completion', async (req, res) => {
+// Define routes
+app.get("/api/completion", async (req, res) => {
   try {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
@@ -55,18 +51,15 @@ app.get('/api/completion', async (req, res) => {
   }
 });
 
-
-// connect to Apollo
+// Connect to Apollo
 const server = new ApolloServer({ typeDefs, resolvers });
 server.listen().then(({ url }) => {
   console.log(`Server ready at ${url}`);
 });
 
-
-
-// connects port
+// Connect to port
 app.listen(PORT, () => {
-  mongoDB_connect();
+  mongoDBConnect();
   console.log(`
     ==============================
     "Online at ${PORT}, Server is."
