@@ -22,6 +22,7 @@ const express = require("express");
 const PORT = process.env.PORT || 3001;
 const bodyParser = require("body-parser");
 const app = express();
+const cors = require("cors");
 
 //openai config. need to setup fetch calls from frontend to grab response from chatgpt. test routes with insomnia
 const configuration = new Configuration({
@@ -29,29 +30,31 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-async function runCompletion () {
-  const completion = await openai.createCompletion({
-    model: "text-davinci-003",
-    prompt: "How are you today?",
-  });
-  // testing
-  console.log(completion.data.choices[0].text);
-  console.log(completion.data.choices[0].text);
-  console.log(completion.data.choices[0].text);
-  console.log(completion.data.choices[0].text);
-  console.log(completion.data.choices[0].text);
-  console.log(completion.data.choices[0].text);
-  console.log(completion.data.choices[0].text);
 
-  }
-
-
-runCompletion()
 // vroom_vroom-express-initialize
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
 app.use(express.static("public"));
+
+app.get('/api/completion', async (req, res) => {
+  try {
+    const completion = await openai.createCompletion({
+      model: "text-davinci-003",
+      temperature: 0.7,
+      max_tokens: 256,
+      prompt: "Write me a fantasy story about STORYMAN. Make the story 2 sentences long.",
+    });
+    console.log(completion.data.choices[0].text)
+    // send the completion text as response
+    res.json({ text: completion.data.choices[0].text });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Something went wrong' });
+  }
+});
+
 
 // connect to Apollo
 const server = new ApolloServer({ typeDefs, resolvers });
