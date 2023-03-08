@@ -1,23 +1,21 @@
-require("dotenv").config();
-const key = process.env.API_KEY;
-
 // mongoDB Database connect
 const mongoDB_connect = require("./config/db/connection.js");
 
 // Apollo & GraphQL
-const { ApolloServer, gql } = require('apollo-server');
+const { ApolloServer, gql } = require("apollo-server");
 const typeDefs = require("./graphQL/typeDefs");
 const resolvers = require("./graphQL/resolvers");
 
-
+// import ChatGPT initialization function
+const initializeChatGPT = require("./config/api/chatGPT");
 
 // express
 const express = require("express");
 // const router = require("express-router")
 const PORT = process.env.PORT || 3001;
 const bodyParser = require("body-parser");
-const app = express()
-  //.router(); once routes are finished then can uncomment or else error will ensue
+const app = express();
+//.router(); once routes are finished then can uncomment or else error will ensue
 
 // vroom_vroom-express-initialize
 app.use(bodyParser.json());
@@ -29,6 +27,8 @@ app.use(express.static("public"));
 const server = new ApolloServer({ typeDefs, resolvers });
 server.listen().then(({ url }) => {
   console.log(`Server ready at ${url}`);
+  // initialize ChatGPT after ApolloServer is ready
+  initializeChatGPT();
 });
 
 // connects port
