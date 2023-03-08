@@ -35,7 +35,7 @@ router.get("/user", authenticateToken, async (req, res) => {
 });
 
 // Authenticate JWT token
-function authenticateToken(req, res, next) {
+function authenticateToken(req, res, next) {d
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
   if (token == null) return res.sendStatus(401);

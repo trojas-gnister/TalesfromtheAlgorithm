@@ -2,38 +2,24 @@ const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 const { User } = require("../User");
+const { InMemoryCache } = require('memory-cache');
+const cache = new InMemoryCache();
+require("dotenv").config();
 
-router.post('/', async (req, res) => {
-  try {
-    const userData = await User.create({
-      username: req.body.username,
-      password: req.body.password,
-    });
-    const token = jwt.sign({ id: userData.id }, 'JWT_SECRET');
-    res.status(200).json({ token });
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
-router.post('/logout', (req, res) =>
-{
- const authHeader = req.headers.authorization; // checks header if token present
-});
+const { authenticateUser, createUser, loginUser, logoutUser } = require('./controllers');
 
-// middleware auth
-function authenticateToken(req, res, next) {
-  const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1];
-  if (!token) {
-    return res.status(401).json({ message: 'Unauthorized' });
-  }
-  jwt.verify(token, 'JWT_SECRET', (err, decoded) => {
-    if (err) {
-      return res.status(403).json({ message: 'Forbidden' });
-    }
-    req.user = decoded;
-    next();
-  });
-}
+// Create user account
+router.post('/signup', createUser);
+
+// Login user
+router.post('/login', loginUser);
+
+// Logout user
+router.post('/logout', authenticateUser, logoutUser);
+
+// Protected route
+router.get('/protected', authenticateUser, (req, res) => {
+  res.status(200).json({ message: 'This is a protected route' });
+});
 
 module.exports = router;

@@ -1,0 +1,10 @@
+const router = require("express").Router();
+const userRoutes = require("./userRoutes");
+const openAiRoutes = require("./openAiRoutes");
+const chatGPTroutes = require("./chatGPTroutes");
+const stripeRoutes = require("./stripeRoutes");
+router.use("/api/users", userRoutes);
+router.use("/api/openai", openAiRoutes);
+router.use("/api/chatgpt", chatGPTroutes);
+router.use("/api/stripe", stripeRoutes);
+module.exports = router;

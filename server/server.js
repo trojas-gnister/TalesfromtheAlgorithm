@@ -2,7 +2,7 @@ const apiKey = process.env.KEY;
 require("dotenv").config();
 
 // mongoDB Database connect
-const mongoDB_connect = require("./config/db/connection.js");
+const mongoDB_connect = require("./config/connection.js");
 // Apollo & GraphQL
 const { typeDefs, resolvers } = require("./graphQL");
 // express
@@ -26,31 +26,51 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // connects port
-app.listen(process.env.PORT || 3001, () => {
-  mongoDB_connect();
-  console.log(`
-    ==============================
-    "Online at ${PORT}, Server is."
-                __.-._
-                '-._"7'
-                  /'.-c
-                  |  /T
-                _)_/LI
-    -==============================
-    ===============================
-    "Online at ${PORT}, Server is MEOW!!."
+app.listen(process.env.PORT || 3001, async () =>
+{
 
-            /\\_/\\
-            ( o o )   *team_MEOW*
-           ==( I )==
-             / _ \
-             \/ \/
-    ==============================
-  `);
+
+  await mongoDB_connect(); console.log(
+
+`
+
+                                               /&\
+                                              /{*}\
+                                             / +++ \
+                                            / +++++ \
+                                           / +++++++ \
+                                          <----------->
+                                            __________
+                                            (_*\---/*))
+                                             (@_@)_)*}
+    =============================              \XX|++|
+    "Online at ${PORT}, Server is."            |_\\\/|
+                __.-._                         |||\/|
+                '-._"7'                        /**\+++
+                  /'.-c                        /^^^\++
+                  |  /T                        |***|++
+                _)_/LI                     /^^\|***|}+
+    -==============================        /^^\{(o}}\|
+    ===============================       |^ ^^^^\\\\|/\
+
+    "Online @$PORT Server is MEOW!!._|^^^^|/|||]\|{O}/\/|\
+
+            (****)    / ~~~*~~*~~~*~*~*~~~\//\_^^/||\//}\
+            /|x/|   _______/ ~*~*~~~*~~*~~~ //||||||/<?||///||\
+ ^         (-O-)}|    _________/~~*~*&~(*~ 3mt.shellzzz });/||||||*~
+ )= =__   (@v@)\^\\   _________/ ~*~~~*~~~*~~ //\/G ^^||||||a   |
+       <<<{[+][C\^\\  |__________/ ~~*~~~*~~~ /\/\//\/_E|||||as |
+          <O%TT%O\^\\  _|________/~~~~~~~~~~//_/||!]||||||||asc
+    ______//. .//\\^\\   |___________/ ~*~~*~~*//\/_|[)M\\~|||xxczas
+    ============================/..........^^^^_______||||xxvx                `
+
+  );
 });
 
 // error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Something broke!");
+
+
 });
