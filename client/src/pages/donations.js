@@ -4,7 +4,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./checkoutForm";
 import { loadStripe } from "@stripe/stripe-js";
 
-function Donations() {
+export default function Donations() {
   const [stripePromise, setStripePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
 
@@ -37,4 +37,3 @@ function Donations() {
   );
 }
 
-export default Donations;

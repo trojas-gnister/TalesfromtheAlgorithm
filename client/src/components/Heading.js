@@ -36,10 +36,10 @@ export default function Heading() {
         width: 500,
         alignItems: 'center'
       }}>
-        <Typography align="center" variant="subtitle2">
-        A revolutionary tool to harness the power of 
-        artificial intelligence. With just a few prompts, create your own unique narratives, whether it's a thrilling adventure, a heartwarming romance, 
-        or a thought-provoking mystery.
+        <Typography align="center" variant="body1">
+        Revolutionize storytelling with the power of 
+        artificial intelligence. Create your own unique narratives, thrilling adventures, heartwarming romances, 
+        or thought-provoking mysteries.
         </Typography>
       </Container>
     </div>
