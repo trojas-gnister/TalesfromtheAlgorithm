@@ -19,12 +19,15 @@ import './index.css'
 // Global Theme Settings
 import darkScrollbar from '@mui/material/darkScrollbar';
 // Custom Dark Theme values
+
 // white - #fff
 // light gray - #D3D3D3
 // pink - #F2A2E8
 // mint green - #3EB489
 // green - #00AB4D
-// dark purple - #11153A
+// dark purple - #11153A 
+// very purpely purple - #120043
+// perfect purple - #04043B
 // vibrant purple color - #a100f2
 // electric blue - #7DF9FF
 const darkTheme = createTheme({
@@ -41,21 +44,11 @@ const darkTheme = createTheme({
         secondary: '#D3D3D3',
       },
 },
-
-components: {
-    MuiCssBaseline: {
-      styleOverrides: (themeParam) => ({
-        body: themeParam.palette.mode === 'dark' ? darkScrollbar() : null,
-      }),
-    },
-  },
   typography: {
     fontFamily: [
-      'PT Serif'
-    ]
-
+      'Source Sans Pro'
+    ],
   },
-
 });
 
 
