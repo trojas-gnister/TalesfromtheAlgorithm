@@ -4,7 +4,7 @@ import Background from "../assets/darkest-background.png";
 import SimpleAppBar from "../components/SimpleAppBar";
 import StoryBox from "../components/StoryBox"
 
-export default function SignUp() {
+export default function Story() {
   return (
     <Container maxWidth={true} disableGutters>
       <div
