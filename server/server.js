@@ -6,21 +6,12 @@ const { ApolloServer, gql } = require("apollo-server");
 const typeDefs = require("./graphQL/typeDefs");
 const resolvers = require("./graphQL/resolvers");
 
-<<<<<<< HEAD
-=======
-// import ChatGPT initialization function
-const initializeChatGPT = require("./config/api/chatGPT");
-
->>>>>>> 800ed468865aa08404757622ccd0dfa3d01dd9b2
 // express
 const express = require("express");
 const PORT = process.env.PORT || 3001;
 const bodyParser = require("body-parser");
 const app = express();
-<<<<<<< HEAD
-=======
 //.router(); once routes are finished then can uncomment or else error will ensue
->>>>>>> 800ed468865aa08404757622ccd0dfa3d01dd9b2
 
 // vroom_vroom-express-initialize
 app.use(bodyParser.json());
