@@ -18,9 +18,10 @@ import PowerHeader from '../components/PowerHeader';
 
 export default function Home() {
   return (
-  <div
-  sx={{ colorScheme: 'dark'}}>
-        <Container maxWidth={false} disableGutters>
+  <div>
+
+    {/* IMAGE SECTION 1 */}
+      <Container maxWidth={false} disableGutters>
       <div
         style={
           {
@@ -36,11 +37,15 @@ export default function Home() {
         <DetailedAppBar />
         <Heading />
         <StartButton />
-        <DonateBtn />
       </div>
     </Container>
 
-    <Container maxWidth={false} disableGutters>
+    {/* COLOR SECTION */}
+    <Container maxWidth={false} disableGutters
+    sx={{
+      borderTop: 2,
+      borderColor: '#3EB489'
+    }}>
       <div
         style={
           {
@@ -49,7 +54,7 @@ export default function Home() {
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
             width: '99vw',
-            height: '95vh',
+            height: '70vh',
           }
         }
       >
@@ -58,7 +63,12 @@ export default function Home() {
       </div>
     </Container>
 
-    <Container maxWidth={false} disableGutters>
+    {/* IMAGE SECTION 2*/}
+    <Container maxWidth={false} disableGutters
+    sx={{
+      borderTop: 2,
+      borderColor: '#3EB489'
+    }}>
       <div
         style={
           {

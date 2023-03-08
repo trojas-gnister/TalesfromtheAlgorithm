@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Icon from '@mui/material/Icon';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/pink-logo.png';
+import DonateBtn from '../components/donationBtn'
 
 export default function DetailedAppBar() {
   return (
@@ -30,6 +31,18 @@ export default function DetailedAppBar() {
           </Typography>
 
           {/* Buttons */}
+          <Button variant='text'
+          style={{
+            textTransform: 'none',
+            color: 'white',
+            fontFamily: 'Source Sans Pro',
+            fontWeight: 'bold',
+            marginRight: 10,
+            fontSize: 16,
+          }}>
+            About
+          </Button>
+          <DonateBtn />
           <Button variant='text' component={Link} to="/login"
           style={{
             textTransform: 'none',
@@ -41,7 +54,7 @@ export default function DetailedAppBar() {
           }}>
             Login
           </Button>
-          <Button variant='text' component={Link} to="/signup"
+          <Button variant='outlined' component={Link} to="/signup"
           style={{
             textTransform: 'none',
             fontFamily: 'Source Sans Pro',

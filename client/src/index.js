@@ -47,7 +47,7 @@ const darkTheme = createTheme({
   typography: {
     fontFamily: [
       'Source Sans Pro'
-    ]
+    ],
   },
 });
 

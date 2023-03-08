@@ -8,25 +8,32 @@ export default function PowerHeading() {
         <div>
 
             {/* Header - Powered by magic runes ...  */}
-            <Container
+            <Container maxWidth={false}
             sx={{
-                width: 750,
                 alignItems: 'center',
                 marginBottom: 30,
+                position: 'relative',
+                top: '25vh',
             }}>
-                <Typography align="center" variant="h4"
+                <Typography align="center" variant="h3"
                 sx={{
                     color: '#F2A2E8',
                     marginBottom: 1,
-                    fontFamily: 'Eczar'
+                    fontWeight: 'bold',
+                    fontFamily: 'Eczar',
+                    letterSpacing: 0.8,
+                    fontSize: 40,
                 }}>
                     Powered by magic runes, ancient spells
                 </Typography>
-                <Typography align="center" variant="h4"
+                <Typography align="center" variant="h3"
                 sx={{
-                    fontFamily: 'Eczar'
+                    fontFamily: 'Eczar',
+                    fontWeight: 'bold',
+                    letterSpacing: 0.8,
+                    fontSize: 40,
                 }}>
-                    . . . and a little bit of AI
+                    . . . and React.js
                 </Typography>
             </Container>
         </div>

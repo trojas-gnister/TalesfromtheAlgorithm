@@ -38,7 +38,7 @@ export default function Heading() {
 
         }}
         >
-        An AI writing partner to help you create the world you've always dreamed about ... or just mess around. Create an account to start today!
+        An AI writing partner to help you create the world you've always dreamed about . . . or just to have fun. Create an account to start today!
 
         </Typography>
       </Container>
