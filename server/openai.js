@@ -38,7 +38,11 @@ client.send(
 
     // Add API route
     app.get("/api/completion", async (req, res) => {
-
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+      );
       try {
         const completion = await openai.createCompletion({
           model: "text-davinci-003",
