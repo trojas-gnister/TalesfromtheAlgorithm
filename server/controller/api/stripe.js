@@ -32,4 +32,3 @@ app.post("/create-payment-intent", async (req, res) => {
 //   }
 // });
 
-// users / story / paystripe;
