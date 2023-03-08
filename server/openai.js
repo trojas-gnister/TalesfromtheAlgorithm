@@ -37,7 +37,7 @@ client.send(
     const openai = new OpenAIApi(configuration);
 
     // Add API route
-    app.get("/api/completion", async (req, res) => {
+    app.get("/completion", async (req, res) => {
       res.header(
         "Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept"
