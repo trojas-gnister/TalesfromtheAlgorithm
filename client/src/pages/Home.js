@@ -5,6 +5,7 @@ import { Container } from '@mui/system';
 import DetailedAppBar from '../components/DetailedAppBar'
 import StartButton from '../components/StartButton'
 import ThreeCards from '../components/ThreeCards';
+import DonateBtn from '../components/donationBtn';
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <Heading />
         <StartButton />
         <ThreeCards />
+        <DonateBtn />
       </div>
     </Container>
 
