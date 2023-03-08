@@ -7,8 +7,7 @@ export default function Heading() {
       {/* Title Container */}
       <Container maxWidth={false} disableGutters
       sx={{
-        marginTop: 31,
-        marginBottom: 1.5,
+        marginTop: '30vh',
         alignItems: 'center'
       }}>
 
@@ -24,20 +23,10 @@ export default function Heading() {
           Enchant your imagination.
         </Typography>
       </Container>
-      
-        {/* Line Seperator */}
-        {/* <Container
-        sx={{
-          width: 515,
-          alignItems: 'center',
-        }}> */}
-          {/* <Box sx={{ bgcolor: '#7DF9FF', width: 470, height: 4}}></Box> */}
-        {/* </Container> */}
 
       {/* Subtitle Container */}
       <Container
       sx={{
-        marginTop: 2,
         width: 600,
         alignItems: 'center'
       }}>

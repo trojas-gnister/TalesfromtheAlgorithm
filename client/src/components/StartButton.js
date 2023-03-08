@@ -9,7 +9,7 @@ import CreateIcon from '@mui/icons-material/Create';
 export default function StartButton() {
   return (
     <Container maxWidth={false} align = 'center'
-    sx={{ marginTop: 5, }}>
+    sx={{ marginTop: 6, }}>
           <Button variant="outlined" href='#about' endIcon={<SouthIcon />}            
             sx={{
               textTransform: 'none',
@@ -19,6 +19,8 @@ export default function StartButton() {
               fontWeight: 'bold',
               letterSpacing: 0.8,
               marginRight: 2,
+              color: '#fff',
+              bgColor: '#fff',
               }}>
               LEARN MORE
           </Button>
