@@ -5,16 +5,13 @@ const key = process.env.API_KEY;
 const mongoDB_connect = require("./config/db/connection.js");
 
 // graphQL - apollo - tools
-const { apolloServerExpress, typeDefs, resolvers } = require("./graphQL");
-const graphQL = apolloServerExpress({ typeDefs, resolvers });
+const { typeDefs, resolvers } = require("./graphQL");
 
 // express
 const express = require("express");
-// const router = require("express-router")
 const PORT = process.env.PORT || 3001;
 const bodyParser = require("body-parser");
-const app = express()
-  //.router(); once routes are finished then can uncomment or else error will ensue
+const app = express();
 
 // vroom_vroom-express-initialize
 app.use(bodyParser.json());
@@ -22,21 +19,32 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
-
-app.get('/config', (req, res) => {
+// routes
+app.get("/config", (req, res) => {
   res.send({
     publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
-  })
-})
+  });
+});
 
-app.post("/create-payment-intent", async (req, res) =>
-{
+app.post("/create-payment-intent", async (req, res) => {
   const paymentIntent = await Stripe.PaymentIntentsResource.create({
-    currency: 'usd',
+    currency: "usd",
     amount: 1999,
     automatic_payment_methods: {
       enabled: true,
     },
-  })
-  res.send({ clientSecret: paymentIntent.client_secret })
-})
+  });
+  res.send({ clientSecret: paymentIntent.client_secret });
+});
+
+// server
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  mongoDB_connect();
+});
+
+// error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
