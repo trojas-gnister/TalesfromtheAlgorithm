@@ -14,7 +14,6 @@ import Auth from "../utils/auth";
 const Signup = () => {
   const [formState, setFormState] = useState({
     username: "",
-    email: "",
     password: "",
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
@@ -44,8 +43,7 @@ const Signup = () => {
   };
 
   return (
-    <Container component="main" maxWidth='md'
-    sx={{ marginTop: 20,}}>
+    <Container component="main" maxWidth="xs">
       <Paper
         elevation={24}
         style={{
@@ -53,8 +51,7 @@ const Signup = () => {
           flexDirection: "column",
           alignItems: "center",
           backgroundColor: "#04043B",
-          paddingTop: 60,
-          paddingBottom: 60,
+          padding: 30,
           borderRadius: 25,
           border: 1,
           borderColor: "#3EB489",
