@@ -1,4 +1,15 @@
-import { Paper, Container, Grid, Typography, Box } from "@mui/material";
+import {
+  Paper,
+  Container,
+  Grid,
+  Typography,
+  Box
+} from '@mui/material';
+
+// icons
+import BoltIcon from '@mui/icons-material/Bolt';
+import WbIncandescentIcon from '@mui/icons-material/WbIncandescent';
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 
 export default function ThreeCards() {
   return (
@@ -14,8 +25,8 @@ export default function ThreeCards() {
           position: "relative",
           top: "15vh",
           left: "15vh",
-        }}
-      >
+        }}>
+
         {/* Paper 1 -------------- */}
 
         <Grid item xs={4}>
@@ -74,8 +85,7 @@ export default function ThreeCards() {
               height: 325,
               borderRadius: 10,
               opacity: 0.9,
-            }}
-          >
+            }}>
             <Typography
               variant="h4"
               sx={{
