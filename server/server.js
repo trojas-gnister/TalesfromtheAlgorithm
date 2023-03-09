@@ -12,7 +12,7 @@ const { Configuration, OpenAIApi } = require("openai");
 const mongoDB_connect = require("./config/db/connection.js");
 
 // Apollo & GraphQL
-const { ApolloServer, gql } = require("apollo-server");
+const { ApolloServer } = require("apollo-server");
 const typeDefs = require("./graphQL/typeDefs");
 const resolvers = require("./graphQL/resolvers");
 
@@ -57,7 +57,11 @@ app.get('/api/completion', async (req, res) => {
 
 
 // connect to Apollo
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: ({ req }) => ({ req }),
+  });
 server.listen().then(({ url }) => {
   console.log(`Server ready at ${url}`);
 });
