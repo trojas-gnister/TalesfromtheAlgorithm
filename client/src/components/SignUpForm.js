@@ -86,7 +86,8 @@ export default function LoginForm() {
                             fontWeight: 'bold',
                             letterSpacing: 0.8,
                         }}>
-                        SIGN UP
+
+                      SIGN UP
                     </Button>
                     <Box sx={{
                         display: 'flex',
