@@ -13,10 +13,7 @@ import DetailedAppBar from '../components/DetailedAppBar'
 import StartButton from '../components/StartButton'
 import ThreeCards from '../components/ThreeCards';
 import PowerHeader from '../components/PowerHeader';
-
 import AnimateIn from '../components/AnimateIn'
-
-
 
 
 export default function Home() {
