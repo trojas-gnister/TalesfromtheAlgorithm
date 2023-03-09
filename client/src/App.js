@@ -13,6 +13,7 @@ import Choices from "./pages/Choices";
 import Story from "./pages/Story"
 
 
+
 const App = ({ openAi, storeResponse, getResponse }) => {
 //   const [conversationId, setConversationId] = useState(null);
 //   const handleSendRequest = (text) =>

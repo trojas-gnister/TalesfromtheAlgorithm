@@ -1,13 +1,13 @@
 import React from 'react';
 import { useContext, useState } from 'react';
-import { authContext } from '../contexts/AuthContext';
-import { useForm} from "../utils/hooks";
+import { AuthContext } from '../context/authContext.js';
+//import { useForm} from "../utils/hooks";
 import { useMutation } from "@apollo/client";
 
 import { gql } from "graphql-tag"
 import { useNavigate } from 'react-router-dom';
 
-import { Container } from '@mui/material'
+import { Button, Container, Stack, Alert } from '@mui/material'
 import Background from '../assets/darkest-background.png';
 import SignUpForm from '../components/SignUpForm'
 import DetailedAppBar from '../components/DetailedAppBar';
@@ -26,9 +26,13 @@ const REGISTER_USER = gql`
 `
 
 function Register(props) {
-  const context = useContext(authContext);
+  const context = useContext(AuthContext);
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
+
+  function registerUserCallback() {
+    console.log("registerUserCallback");
+  }
 
   const { onChange, onSubmit, values } = useForm(registerUserCallback, {
     username: "",
