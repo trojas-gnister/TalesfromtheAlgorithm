@@ -10,6 +10,24 @@ import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
 export default function LoginForm() {
+  const [username, setUsername] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+  const [addUser, { error }] = useMutation(ADD_USER);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const { data } = await addUser({
+        variables: { username, password },
+      });
+      console.log(data);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+    
+
     return (
         <Container component='main' maxWidth='xs'>
             <Paper
@@ -52,6 +70,8 @@ export default function LoginForm() {
                         name="username"
                         autoComplete="username"
                         autoFocus
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                         sx={{
                             fontFamily: 'eczar',
                             fontWeight: 'bold',
@@ -70,6 +90,8 @@ export default function LoginForm() {
                         type="password"
                         id="password"
                         autoComplete="current-password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         sx={{
                             fontFamily: 'eczar',
                             fontWeight: 'bold',
