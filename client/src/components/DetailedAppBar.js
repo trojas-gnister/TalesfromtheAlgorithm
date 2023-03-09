@@ -22,12 +22,14 @@ export default function DetailedAppBar() {
           </Icon>
           <Typography
             variant="h5"
-            component="div"
+            component={Link}
+            to="/"
             sx={{
               flexGrow: 1,
               color: "#fff",
               fontFamily: "Eczar",
               fontWeight: "bold",
+              textDecoration: 'none'
             }}
           >
             DreamAI

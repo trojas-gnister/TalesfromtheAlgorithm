@@ -13,13 +13,13 @@ import DetailedAppBar from '../components/DetailedAppBar'
 import StartButton from '../components/StartButton'
 import ThreeCards from '../components/ThreeCards';
 import PowerHeader from '../components/PowerHeader';
-import SimpleGrow from '../components/SimpleGrow';
+import AnimateIn from '../components/AnimateIn'
 
 
 export default function Home() {
+
   return (
   <div>
-
     {/* IMAGE SECTION 1 */}
       <Container maxWidth={false} disableGutters>
       <div
@@ -32,11 +32,13 @@ export default function Home() {
             width: '99vw',
             height: '95vh',
           }
-        }
-      >
-        <DetailedAppBar />
-        <Heading />
-        <StartButton />
+        }>
+          <DetailedAppBar />
+          <AnimateIn>
+            <Heading />
+            <StartButton />
+          </AnimateIn>
+
       </div>
     </Container>
 
@@ -81,9 +83,10 @@ export default function Home() {
           }
         }
       >
-        <PowerHeader />
-        <ThreeCards />
-
+        <AnimateIn>
+          <PowerHeader />
+          <ThreeCards />
+        </AnimateIn>
       </div>
     </Container>
 
@@ -105,11 +108,9 @@ export default function Home() {
           }
         }
       >
-        
-
+      
       </div>
     </Container>
-
   </div>
 
 
