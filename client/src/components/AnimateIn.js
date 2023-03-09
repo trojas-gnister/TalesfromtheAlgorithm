@@ -11,7 +11,7 @@ export default function AnimateIn({ children }) {
       style={{
         opacity: onScreen ? 1 : 0,
         transform: onScreen ? 'none' : 'translate(0, 2rem)',
-        transition: '600ms ease-in-out',
+        transition: '1000ms ease-in-out',
       }}
     >
       {children}
