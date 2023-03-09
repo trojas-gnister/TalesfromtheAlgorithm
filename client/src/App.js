@@ -22,7 +22,7 @@ import Choices from "./pages/Choices";
 import Story from "./pages/Story"
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: '/client/src/App.js',
 });
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
