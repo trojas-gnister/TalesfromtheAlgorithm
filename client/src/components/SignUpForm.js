@@ -37,7 +37,7 @@ export default function LoginForm() {
                 </Typography>
                 {/* Box originally had the function below, waiting till we get that function set up */}
                 {/* onSubmit={handleSubmit} */}
-                <Box component="form" noValidate sx={{ mt: 1, width: '45vw' }}>
+                <Box component="form" noValidate sx={{ mt: 1, maxWidth: '45vw' }}>
                     <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                         <AccountCircle sx={{ color: '#F2A2E8', mb: 2.5, mr: 1}} />   
                         <TextField
