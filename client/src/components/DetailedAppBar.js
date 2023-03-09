@@ -16,17 +16,18 @@ export default function DetailedAppBar() {
         <Toolbar>
 
           {/* Logo */}
-        <Icon
-            sx={{ display: { xs: 'flex', md: 'flex'}}}
+          <Icon
+            sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
             >
-                <img src={Logo} height={20} width={20} alt='Dream AI logo'/> m
-            </Icon>
+                <img src={Logo} height={25} width={25} alt='Dream AI logo'/>
+          </Icon>
           <Typography variant="h5" component="div"
           sx={{
             flexGrow: 1, 
             color: "#fff",
             fontFamily: 'Eczar',
-            fontWeight: 'bold'}}>
+            fontWeight: 'bold'
+            }}>
             DreamAI
           </Typography>
 
