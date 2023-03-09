@@ -10,10 +10,11 @@ import {
 import BoltIcon from '@mui/icons-material/Bolt';
 import WbIncandescentIcon from '@mui/icons-material/WbIncandescent';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
-
+import AnimateIn from '../components/AnimateIn'
 export default function ThreeCards() {
   return (
     <Container maxWidth={false} disableGutters sx={{ alignItems: "center" }}>
+    <AnimateIn>
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
@@ -152,6 +153,7 @@ export default function ThreeCards() {
           </Paper>
         </Grid>
       </Grid>
+      </AnimateIn>
     </Container>
   );
 }

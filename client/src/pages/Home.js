@@ -16,9 +16,9 @@ import PowerHeader from '../components/PowerHeader';
 
 
 export default function Home() {
+
   return (
   <div>
-
     {/* IMAGE SECTION 1 */}
       <Container maxWidth={false} disableGutters>
       <div
@@ -31,11 +31,10 @@ export default function Home() {
             width: '99vw',
             height: '95vh',
           }
-        }
-      >
-        <DetailedAppBar />
-        <Heading />
-        <StartButton />
+        }>
+          <DetailedAppBar />
+          <Heading />
+          <StartButton />
       </div>
     </Container>
 
@@ -104,11 +103,9 @@ export default function Home() {
           }
         }
       >
-        
-
+      
       </div>
     </Container>
-
   </div>
 
 
