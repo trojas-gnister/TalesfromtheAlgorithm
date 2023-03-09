@@ -4,8 +4,17 @@ import { Link } from "react-router-dom";
 import Container from "@mui/material/Container";
 import SouthIcon from "@mui/icons-material/South";
 import CreateIcon from "@mui/icons-material/Create";
+import { useRef, useEffect, useState } from 'react';
 
 export default function StartButton() {
+
+  // Code for transition on page load ;)))
+  const [onScreen, setOnScreen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    setOnScreen(true);
+  }, []);
   return (
     <Container maxWidth={false} align="center" sx={{ marginTop: 6 }}>
       <Button
@@ -13,6 +22,9 @@ export default function StartButton() {
         href="#about"
         endIcon={<SouthIcon />}
         sx={{
+          opacity: onScreen ? 1 : 0,
+          transform: onScreen ? 'none' : 'translate(0, 2rem)',
+          transition: '1000ms ease-in-out',
           textTransform: "none",
           width: 250,
           height: 75,
@@ -32,6 +44,9 @@ export default function StartButton() {
         to="/Choices"
         endIcon={<CreateIcon />}
         sx={{
+          opacity: onScreen ? 1 : 0,
+          transform: onScreen ? 'none' : 'translate(0, 2rem)',
+          transition: '1000ms ease-in-out',
           textTransform: "none",
           width: 275,
           height: 75,
