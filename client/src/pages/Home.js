@@ -12,8 +12,8 @@ import Heading from '../components/Heading'
 import DetailedAppBar from '../components/DetailedAppBar'
 import StartButton from '../components/StartButton'
 import ThreeCards from '../components/ThreeCards';
-import DonateBtn from '../components/donationBtn';
 import PowerHeader from '../components/PowerHeader';
+import SimpleGrow from '../components/SimpleGrow';
 
 
 export default function Home() {
@@ -40,7 +40,7 @@ export default function Home() {
       </div>
     </Container>
 
-    {/* COLOR SECTION */}
+    {/* COLOR SECTION 1*/}
     <Container maxWidth={false} disableGutters
     sx={{
       borderTop: 2,
@@ -83,6 +83,29 @@ export default function Home() {
       >
         <PowerHeader />
         <ThreeCards />
+
+      </div>
+    </Container>
+
+    {/* COLOR SECTION 2 */}
+    <Container maxWidth={false} disableGutters
+    sx={{
+      borderTop: 2,
+      borderColor: '#3EB489'
+    }}>
+      <div
+        style={
+          {
+            backgroundColor: '#04043B',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            width: '99vw',
+            height: '70vh',
+          }
+        }
+      >
+        
 
       </div>
     </Container>

@@ -11,6 +11,7 @@ import {
   Button,
   Box,
 } from "@mui/material";
+import CreateIcon from '@mui/icons-material/Create';
 import { Link } from "react-router-dom";
 import Background from "../assets/darkest-background.png";
 import DetailedAppBar from "../components/DetailedAppBar";
@@ -154,18 +155,31 @@ export default function Choices() {
       </Paper>
       <Box textAlign="center">
         <Button
-          variant="outlined"
-          component={Link}
-          onClick={handleClick} // added onClick handler
-          sx={{
-            textTransform: "none",
-            marginTop: 20,
-            width: 200,
-            height: 60,
-          }}
-        >
-          Generate
+            variant="contained"
+            onClick={handleClick}
+            component={Link}
+            endIcon={<CreateIcon />}
+              sx={{
+                textTransform: 'none',
+                width: 200,
+                height: 50,
+                fontSize: 16,
+                fontWeight: 'bold',
+                letterSpacing: 0.8,
+                marginRight: 2,
+                color: '#04043B',
+                bgColor: '#F2A2E8',
+                paddingLeft: 5,
+                paddingRight: 5,
+                marginTop: 5,
+                marginBottom: 10,
+                // borderRadius: 10,
+             }}>
+              Generate
         </Button>
+
+        {/* // added onClick handler */}
+
         <StoryBox generatedText={generatedText} /> {/* pass the generatedText state variable as a prop */}
       </Box>
 
@@ -173,4 +187,3 @@ export default function Choices() {
     </Container>
   );
 }
-

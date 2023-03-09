@@ -1,19 +1,18 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-
+import * as React from "react";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 
 export default function StoryBox({ generatedText }) {
-  console.log(generatedText)
+  console.log(generatedText);
   return (
     <Box
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 1, width: '75vw' },
+        "& .MuiTextField-root": { m: 1, width: "75vw" },
       }}
       noValidate
       autoComplete="off"
-      textAlign={'center'}
+      textAlign={"center"}
     >
       <div>
         <TextField
@@ -24,6 +23,5 @@ export default function StoryBox({ generatedText }) {
         />
       </div>
     </Box>
-  )
+  );
 }
-
