@@ -13,7 +13,6 @@ import DetailedAppBar from '../components/DetailedAppBar'
 import StartButton from '../components/StartButton'
 import ThreeCards from '../components/ThreeCards';
 import PowerHeader from '../components/PowerHeader';
-import SimpleGrow from '../components/SimpleGrow';
 
 
 export default function Home() {

@@ -6,12 +6,15 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Box } from '@mui/system';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
 
-export default function LoginForm() {
+// throwing error, commented so page displays
+// import { useMutation } from '@apollo/client';
+// import { ADD_USER } from '../utils/mutations';
+
+export default function SignUpForm() {
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth='md'
+    sx={{ marginTop: 20,}}>
       <Paper
         elevation={24}
         style={{
@@ -19,7 +22,8 @@ export default function LoginForm() {
           flexDirection: "column",
           alignItems: "center",
           backgroundColor: "#04043B",
-          padding: 30,
+          paddingTop: 60,
+          paddingBottom: 60,
           borderRadius: 25,
           border: 1,
           borderColor: "#3EB489",
