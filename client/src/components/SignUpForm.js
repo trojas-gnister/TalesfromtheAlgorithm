@@ -19,9 +19,7 @@ export default function LoginForm() {
                     backgroundColor: '#04043B',
                     padding: 30,
                     borderRadius: 25,
-                    border: 1,
                     borderColor: '#3EB489',
-
                 }}
             >
             <Avatar sx={{ marginBottom: 2, bgcolor: '#11153A'}}>

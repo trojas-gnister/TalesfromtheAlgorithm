@@ -89,6 +89,7 @@ export default function LoginForm() {
                             fontFamily: 'eczar',
                             fontWeight: 'bold',
                             letterSpacing: 0.8,
+                            borderRadius: ''
                         }}>
                         LOGIN
                     </Button>
