@@ -10,28 +10,27 @@ const bcrypt = require("bcryptjs");
 
 module.exports = {
     Mutation: {
-        async registerUser(_, {registerInput: {username, email, password} }) {
+        async registerUser(_, {registerInput: {username, password} }) {
             /* Do input validation
-            if (!(email && password && first_name && last_name)) {
+            if (!( password && first_name && last_name)) {
                 res.status(400).send("All input is required");
             }
             */
-            const oldUser = await User.findOne({ email });
+            const oldUser = await User.findOne({ username });
 
             if (oldUser) {
-                throw new ApolloError('A user is already registered with the email: ' + email, 'USER_ALREADY_EXISTS');
+                throw new ApolloError('A user is already registered with the username: ' + username, 'USER_ALREADY_EXISTS');
             }
             
             var encryptedPassword = await bcrypt.hash(password, 10);
             
             const newUser = new User({
                 username: username,
-                email: email.toLowerCase(),
                 password: encryptedPassword
             });
 
             const token = jwt.sign(
-                { user_id: newUser._id, email },
+                { user_id: newUser._id },
                 "UNSAFESTRING",
                 {
                   expiresIn: "2h",
@@ -47,18 +46,18 @@ module.exports = {
                 ...res._doc
             };
         },
-        async loginUser(_, {loginInput: {email, password} }) {
+        async loginUser(_, {loginInput: {username, password} }) {
             /* Do input validation
             if (!(email && password)) {
                 res.status(400).send("All input is required");
             }
             */
-            const user = await User.findOne({ email });
+            const user = await User.findOne({ username });
 
             if (user && (await bcrypt.compare(password, user.password))) {
                 // Create token
                 const token = jwt.sign(
-                  { user_id: user._id, email },
+                  { user_id: user._id },
                   "UNSAFESTRING",
                   {
                     expiresIn: "2h",
