@@ -6,6 +6,9 @@ import CssBaseline from '@mui/material/CssBaseline';
 import reportWebVitals from './reportWebVitals'
 import App from './App'
 import './index.css'
+import client from './apolloClient';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { AuthProvider } from './context/authContext';
 
 
 // // openAi_API_request-response_handlers
@@ -18,6 +21,7 @@ import './index.css'
 
 // Global Theme Settings
 import darkScrollbar from '@mui/material/darkScrollbar';
+import Auth from './utils/auth';
 // Custom Dark Theme values
 
 // white - #fff
@@ -55,6 +59,8 @@ const darkTheme = createTheme({
 ReactDOM.render(
   <ThemeProvider theme={darkTheme}>
     <CssBaseline />
+    <AuthProvider>
+    <ApolloProvider client={client}>
     <BrowserRouter>
       <App
         // openAi={openAi}
@@ -62,6 +68,8 @@ ReactDOM.render(
         // getResponse={getResponse}
       />
     </BrowserRouter>
+    </ApolloProvider>
+    </AuthProvider>
   </ThemeProvider>,
   document.getElementById("root")
 );

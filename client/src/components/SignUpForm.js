@@ -43,8 +43,10 @@ const Signup = () => {
     }
   };
 
+export default function SignUpForm() {
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth='md'
+    sx={{ marginTop: 20,}}>
       <Paper
         elevation={24}
         style={{
@@ -52,7 +54,8 @@ const Signup = () => {
           flexDirection: "column",
           alignItems: "center",
           backgroundColor: "#04043B",
-          padding: 30,
+          paddingTop: 60,
+          paddingBottom: 60,
           borderRadius: 25,
           border: 1,
           borderColor: "#3EB489",

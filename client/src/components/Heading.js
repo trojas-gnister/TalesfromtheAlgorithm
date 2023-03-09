@@ -1,11 +1,30 @@
 import { Typography } from "@mui/material";
 import { Container } from "@mui/system";
 
+import React, { useRef, useEffect, useState } from 'react';
+
+
 export default function Heading() {
+
+  // Code for transition on page load ;)))
+  const [onScreen, setOnScreen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    setOnScreen(true);
+  }, []);
+
   return (
     <div>
       {/* Title Container */}
       <Container
+      ref={ref}
+      style={{
+        opacity: onScreen ? 1 : 0,
+        transform: onScreen ? 'none' : 'translate(0, 2rem)',
+        transition: '600ms ease-in-out',
+      }}
+
         maxWidth={false}
         disableGutters
         sx={{
@@ -15,6 +34,12 @@ export default function Heading() {
       >
         {/* Title Slogan 1 */}
         <Typography
+              ref={ref}
+              style={{
+                opacity: onScreen ? 1 : 0,
+                transform: onScreen ? 'none' : 'translate(0, 1rem)',
+                transition: '600ms ease-in-out',
+              }}
           align="center"
           color="#fff"
           sx={{
@@ -36,6 +61,12 @@ export default function Heading() {
         }}
       >
         <Typography
+              ref={ref}
+              style={{
+                opacity: onScreen ? 1 : 0,
+                transform: onScreen ? 'none' : 'translate(0, 1rem)',
+                transition: '600ms ease-in-out',
+              }}
           align="center"
           variant="body1"
           color="#F2A2E8"

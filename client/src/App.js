@@ -44,6 +44,7 @@ const client = new ApolloClient({
 });
 
 
+
 const App = ({ openAi, storeResponse, getResponse }) => {
 //   const [conversationId, setConversationId] = useState(null);
 //   const handleSendRequest = (text) =>
