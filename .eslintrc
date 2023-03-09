@@ -1,0 +1,57 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "react/forbid-foreign-prop-types": "error",
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-target-blank": "error",
+    "react/jsx-no-undef": "error",
+    "react/jsx-pascal-case": "error",
+    "react/no-danger-with-children": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/no-is-mounted": "error",
+    "react/no-typos": "error",
+    "react/require-render-return": "error",
+    "react/style-prop-object": "error",
+    "react/jsx-uses-vars": "error",
+    "react/jsx-uses-react": "error",
+    "no-unused-expressions": "error",
+    "no-undef": "error"
+  }
+}
+
+
+/*
+
+*
+The "env" key specifies which environments the linter should be applied to. This is required so that the linter knows which rules should be applied in each environment.
+*
+The "extends" key specifies which configuration files the current configuration should extend. This is required so that the linter can use the extended configuration files to determine which rules to use.
+*
+The "parserOptions" key specifies the parser options to be used when parsing the code. This is required so that the linter can properly parse the code and apply the rules correctly.
+*
+The "plugins" key specifies which plugins the linter should use. This is required so that the linter can use the plugins to detect and enforce additional rules.
+*
+The "rules" key specifies which rules the linter should use. This is required so that the linter can apply the specified rules to the code.
+*
+ Prettier = format the code to make it more readable
+*
+ eslint = checks syntax grammer to detect and enforce coding standards (ECMA_SCRIPT).
+ *
+  - both be used together to ensure that code is both readable and follows coding standards.
+*
+
+*/
