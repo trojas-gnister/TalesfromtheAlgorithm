@@ -3,7 +3,7 @@ import {
   Container,
   Grid,
   Typography,
-  Box
+  Box,
 } from '@mui/material';
 
 // icons
@@ -33,41 +33,76 @@ export default function ThreeCards() {
           <Paper
             elevation={24}
             sx={{
-              bgcolor: "#120043",
-              paddingTop: 6,
-              paddingBottom: 6,
-              paddingLeft: 4,
-              width: 300,
-              height: 325,
-              borderRadius: 10,
-              opacity: 0.9,
-            }}
-          >
-            <Typography
-              variant="h4"
-              sx={{
-                marginBottom: 2,
-                marginTop: 0,
-                fontWeight: "bold",
-                fontFamily: "Eczar",
-                letterSpacing: 1.25,
-                color: "#F2A2E8",
-              }}
-            >
-              AI Story Generation
-            </Typography>
-            <Box
-              sx={{
-                bgcolor: "#3EB489",
-                width: 60,
-                height: 5,
-                marginBottom: 2,
-              }}
-            ></Box>
-            <Typography variant="h6" fontWeight="bold">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor i
-            </Typography>
+                bgcolor: '#120043',
+                paddingTop: 6,
+                paddingBottom: 6,
+                paddingLeft: 4,
+                paddingRight: 4,
+                width: 300,
+                height: 325,
+                borderRadius: 10,
+                }}>
+                  <AutoStoriesIcon sx={{ color: '#F2A2E8', mb: 2.5, mr: 1}} />   
+                  <Typography variant='h5'
+                  sx={{
+                    marginBottom: 2,
+                    marginTop: 0,
+                    fontWeight: 'bold',
+                    fontFamily: 'Eczar',
+                    letterSpacing: 1.25,
+                    color: '#F2A2E8',
+                  }}>
+                    AI Story Generation
+                  </Typography>
+                  <Box
+                  sx={{
+                    bgcolor: '#F2A2E8',
+                    width: 60,
+                    height: 5,
+                    marginBottom: 2,
+                  }}></Box>
+                  <Typography variant='h6' fontWeight='bold'>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
+                  </Typography>
+                </Paper>
+        </Grid>
+
+      {/* Paper 2 -------------- */}
+
+      <Grid item xs={4}>
+        <Paper elevation={24}
+            sx={{
+                bgcolor: '#120043',
+                paddingTop: 6,
+                paddingBottom: 6,
+                paddingLeft: 4,
+                paddingRight: 4,
+                width: 300,
+                height: 325,
+                borderRadius: 10,
+                }}>
+                  <BoltIcon sx={{ color: '#F2A2E8', mb: 2.5, mr: 1}} />   
+                  <Typography variant='h5'
+                    sx={{
+                      marginBottom: 2,
+                      marginTop: 0,
+                      fontWeight: 'bold',
+                      fontFamily: 'Eczar',
+                      letterSpacing: 1.25,
+                      color: '#F2A2E8',
+                    }}>
+                      Unleash your creativity.
+                  </Typography>
+                  <Box
+                  sx={{
+                    bgcolor: '#F2A2E8',
+                    width: 60,
+                    height: 5,
+                    marginBottom: 2,
+                  }}></Box>
+                  <Typography variant='h6' fontWeight='bold'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
+                  </Typography>
           </Paper>
         </Grid>
 
