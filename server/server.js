@@ -26,7 +26,11 @@ app.use(openaiApp);
 app.use(express.static("public"));
 
 // connect to Apollo
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({ 
+  typeDefs,
+  resolvers,
+  context: ({ req }) => ({ req })
+});
 server.listen().then(({ url }) => {
   console.log(`Server ready at ${url}`);
 });
