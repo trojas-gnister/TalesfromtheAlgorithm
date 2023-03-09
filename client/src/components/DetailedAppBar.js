@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Icon from '@mui/material/Icon';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/pink-logo.png';
+import DonateBtn from '../components/donationBtn'
 
 export default function DetailedAppBar() {
   return (
@@ -16,34 +17,52 @@ export default function DetailedAppBar() {
 
           {/* Logo */}
         <Icon
-            sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+            sx={{ display: { xs: 'flex', md: 'flex'}}}
             >
-                <img src={Logo} height={25} width={25} alt='Dream AI logo'/>
+                <img src={Logo} height={20} width={20} alt='Dream AI logo'/> m
             </Icon>
-          <Typography variant="h6" component="div"
+          <Typography variant="h5" component="div"
           sx={{
             flexGrow: 1, 
             color: "#fff",
-            fontFamily: 'Capriola'}}>
+            fontFamily: 'Eczar',
+            fontWeight: 'bold'}}>
             DreamAI
           </Typography>
 
           {/* Buttons */}
-          <Button variant='outlined' component={Link} to="/login"
+          <Button variant='text'
           style={{
             textTransform: 'none',
             color: 'white',
-            fontFamily: 'Capriola',
+            fontFamily: 'Source Sans Pro',
+            fontWeight: 'bold',
             marginRight: 10,
-          }}
-          >Login</Button>
+            fontSize: 16,
+          }}>
+            About
+          </Button>
+          <DonateBtn />
+          <Button variant='text' component={Link} to="/login"
+          style={{
+            textTransform: 'none',
+            color: 'white',
+            fontFamily: 'Source Sans Pro',
+            fontWeight: 'bold',
+            marginRight: 10,
+            fontSize: 16,
+          }}>
+            Login
+          </Button>
           <Button variant='outlined' component={Link} to="/signup"
           style={{
             textTransform: 'none',
-            color: 'white',
-            fontFamily: 'Capriola'
-          }}
-          >Sign Up</Button>
+            fontFamily: 'Source Sans Pro',
+            fontSize: 16,
+            fontWeight: 'bold',
+          }}>
+            Sign Up
+            </Button>
         </Toolbar>
       </AppBar>
     </Box>

@@ -22,7 +22,7 @@ export default function SimpleAppBar() {
           sx={{
             flexGrow: 1, 
             color: "#fff",
-            fontFamily: 'Capriola'}}>
+            fontFamily: 'Eczar'}}>
             DreamAI
           </Typography>
 
