@@ -5,9 +5,46 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import { Box } from "@mui/system";
 import * as React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 
-export default function LoginForm() {
+const Login = (props) => {
+  const [formState, setFormState] = useState({ name: '', password: '' });
+  const [login, { error, data }] = useMutation(LOGIN_USER);
+
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
+
+    // clear form values
+    setFormState({
+      name: '',
+      password: '',
+    });
+  };
   return (
     <Container component="main" maxWidth='md'
     sx={{ marginTop: 20,}}>
@@ -41,6 +78,12 @@ export default function LoginForm() {
         </Typography>
         {/* Box originally had the function below, waiting till we get that function set up */}
         {/* onSubmit={handleSubmit} */}
+        {data ? (
+              <p>
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
+              </p>
+            ) : (
         <Box component="form" noValidate sx={{ mt: 1, maxWidth: "45vw" }}>
           <Box sx={{ display: "flex", alignItems: "flex-end" }}>
             <AccountCircle sx={{ color: "#F2A2E8", mb: 2.5, mr: 1 }} />
@@ -53,6 +96,8 @@ export default function LoginForm() {
               label="Username"
               name="username"
               autoComplete="username"
+              value={formState.name}
+              onChange={handleChange}
               autoFocus
               sx={{
                 fontFamily: "eczar",
@@ -73,6 +118,8 @@ export default function LoginForm() {
               type="password"
               id="password"
               autoComplete="current-password"
+              value={formState.password}
+              onChange={handleChange}
               sx={{
                 fontFamily: "eczar",
                 fontWeight: "bold",
@@ -114,8 +161,11 @@ export default function LoginForm() {
             </Link>
           </Box>
         </Box>
+            )}
       </Paper>
     </Container>
   );
 }
+
+export default Login;
 

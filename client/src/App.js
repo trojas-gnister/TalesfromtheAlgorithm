@@ -13,6 +13,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // imported webpages
 import Home from "./pages/Home";
+import { setContext } from '@apollo/client/link/context';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Donations from "./pages/donations";
