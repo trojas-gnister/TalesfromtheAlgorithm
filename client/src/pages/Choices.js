@@ -21,10 +21,10 @@ export default function Choices() {
 
   const handleClick = () => {
     fetch('https://s7mnls94ja.execute-api.us-east-1.amazonaws.com/staging/completion', {
-      mode: 'cors',
+      method: 'GET',
       headers: {
-        'Access-Control-Allow-Origin':'*'
-      }
+        'Content-Type': 'application/json',
+      },
     })
       .then(response => response.json())
       .then(data => setGeneratedText(data.text)) // set the generatedText state variable
