@@ -5,9 +5,10 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@fontsource/eczar": "^4.5.8",
     "@fontsource/pt-serif": "^4.5.7",
     "@fontsource/roboto": "^4.5.8",
-    "@fontsource/capriola": "^4.5.8",
+    "@fontsource/source-sans-pro": "^4.5.8",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.11",
     "@mui/styled-engine-sc": "^5.11.11",
@@ -17,7 +18,13 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.2.2",
+<<<<<<< HEAD
     "react-scripts": "5.0.1"
+=======
+    "react-scripts": "^5.0.1",
+    "react-tsparticles": "^2.9.3",
+    "web-vitals": "^2.1.4"
+>>>>>>> c5ce9d5ac88293c3ad04a0c2252fdb750761b9c6
   },
   "scripts": {
     "start": "react-scripts start",

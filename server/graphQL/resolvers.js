@@ -83,4 +83,4 @@ const resolvers = {
   }
 };
 
-module.exports = resolvers, { generateResponse }
+module.exports = resolvers, { generateResponse };
