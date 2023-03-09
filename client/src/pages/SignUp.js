@@ -1,7 +1,7 @@
 import React from 'react';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../context/authContext.js';
-//import { useForm} from "../utils/hooks";
+import { useForm} from "../utils/hooks";
 import { useMutation } from "@apollo/client";
 
 import { gql } from "graphql-tag"
@@ -102,8 +102,29 @@ export default function SignUp() {
               id="username"
               label="Username"
               name="username"
+              onChange={onChange} 
               autoComplete="username"
               autoFocus
+              sx={{
+                fontFamily: "eczar",
+                fontWeight: "bold",
+                letterSpacing: 0.8,
+              }}
+            />
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+            <LockOutlinedIcon sx={{ color: "#F2A2E8", mb: 2.5, mr: 1 }} />
+            <TextField
+              variant="filled"
+              color="secondary"
+              margin="normal"
+              fullWidth
+              name="email"
+              label="Email"
+              type="email"
+              id="email"
+              onChange={onChange}
+              autoComplete="current-password"
               sx={{
                 fontFamily: "eczar",
                 fontWeight: "bold",
@@ -122,6 +143,27 @@ export default function SignUp() {
               label="Password"
               type="password"
               id="password"
+              onChange={onChange}
+              autoComplete="current-password"
+              sx={{
+                fontFamily: "eczar",
+                fontWeight: "bold",
+                letterSpacing: 0.8,
+              }}
+            />
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+            <LockOutlinedIcon sx={{ color: "#F2A2E8", mb: 2.5, mr: 1 }} />
+            <TextField
+              variant="filled"
+              color="secondary"
+              margin="normal"
+              fullWidth
+              name="confirmPassword"
+              label="Confirm password"
+              type="confirmPassword"
+              id="confirmPassword"
+              onChange={onChange}
               autoComplete="current-password"
               sx={{
                 fontFamily: "eczar",
