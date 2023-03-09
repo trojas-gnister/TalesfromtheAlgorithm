@@ -18,13 +18,16 @@ export default function SimpleAppBar() {
             >
                 <img src={Logo} height={25} width={25} alt='Dream AI logo'/>
             </Icon>
-          <Typography variant="h6" component="div"
+            <Typography variant="h5" component="div"
           sx={{
             flexGrow: 1, 
             color: "#fff",
-            fontFamily: 'Eczar'}}>
+            fontFamily: 'Eczar',
+            fontWeight: 'bold'
+            }}>
             DreamAI
           </Typography>
+
 
         </Toolbar>
       </AppBar>
