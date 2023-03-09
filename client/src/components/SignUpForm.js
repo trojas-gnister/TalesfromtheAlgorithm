@@ -10,7 +10,6 @@ import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
 export default function LoginForm() {
-
   return (
     <Container component="main" maxWidth="xs">
       <Paper
