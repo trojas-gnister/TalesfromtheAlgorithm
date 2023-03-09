@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from '@mui/material'
 import Background from '../assets/darkest-background.png';
 import LoginForm from '../components/LoginForm';
-import SimpleAppBar from '../components/SimpleAppBar';
+import DetailedAppBar from '../components/DetailedAppBar';
 
 export default function Login() {
     return (
@@ -17,7 +17,7 @@ export default function Login() {
             minHeight: '100vh',
         }}
         >
-            <SimpleAppBar />
+            <DetailedAppBar />
             <LoginForm />
             </div>
         </Container>

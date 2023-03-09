@@ -17,7 +17,8 @@ export default function ThreeCards() {
         marginRight: 'auto',
         marginLeft: 'auto',
         position: 'relative',
-        top: '15vh'
+        top: '15vh',
+        left: '15vh'
     
     }}>
 
