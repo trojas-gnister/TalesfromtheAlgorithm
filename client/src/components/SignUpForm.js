@@ -43,7 +43,6 @@ const Signup = () => {
     }
   };
 
-export default function SignUpForm() {
   return (
     <Container component="main" maxWidth='md'
     sx={{ marginTop: 20,}}>
