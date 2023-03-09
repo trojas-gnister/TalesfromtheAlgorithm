@@ -7,11 +7,14 @@ import { useMutation } from "@apollo/client";
 import { gql } from "graphql-tag"
 import { useNavigate } from 'react-router-dom';
 
-import { Button, Container, Stack, Alert } from '@mui/material'
-import Background from '../assets/darkest-background.png';
-import SignUpForm from '../components/SignUpForm'
-import DetailedAppBar from '../components/DetailedAppBar';
-
+// MUI
+import { Link } from 'react-router-dom';
+import { Container, TextField, Button, Typography, Paper } from '@mui/material';
+import Avatar from '@mui/material/Avatar';
+import EmojiPeopleRoundedIcon from '@mui/icons-material/EmojiPeopleRounded';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import { Box } from '@mui/system';
 
 const REGISTER_USER = gql`
         mutation Mutation(
@@ -55,22 +58,113 @@ function Register(props) {
 
 
 export default function SignUp() {
-    return (
-        <Container maxWidth={true} disableGutters>
-            <div
+  return (
+    <Container component="main" maxWidth='md'
+    sx={{ marginTop: 20,}}>
+      <Paper
+        elevation={24}
         style={{
-            backgroundImage:`url(${Background})`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            width: '99vw',
-            minHeight: '100vh',
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          backgroundColor: "#04043B",
+          paddingTop: 60,
+          paddingBottom: 60,
+          borderRadius: 25,
+          border: 1,
+          borderColor: "#3EB489",
         }}
+      >
+        <Avatar sx={{ marginBottom: 2, bgcolor: "#11153A" }}>
+          <EmojiPeopleRoundedIcon />
+        </Avatar>
+        <Typography
+          component="h1"
+          variant="h5"
+          sx={{
+            fontFamily: "eczar",
+            fontWeight: "bold",
+            letterSpacing: 0.8,
+          }}
         >
-            <DetailedAppBar />
-            <SignUpForm />
-            </div>
-        </Container>
-    )
+          Create your account.
+        </Typography>
+        {/* Box originally had the function below, waiting till we get that function set up */}
+        {/* onSubmit={handleSubmit} */}
+        <Box component="form" noValidate sx={{ mt: 1, maxWidth: "45vw" }}>
+          <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+            <AccountCircle sx={{ color: "#F2A2E8", mb: 2.5, mr: 1 }} />
+            <TextField
+              variant="filled"
+              color="secondary"
+              margin="normal"
+              fullWidth
+              id="username"
+              label="Username"
+              name="username"
+              autoComplete="username"
+              autoFocus
+              sx={{
+                fontFamily: "eczar",
+                fontWeight: "bold",
+                letterSpacing: 0.8,
+              }}
+            />
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+            <LockOutlinedIcon sx={{ color: "#F2A2E8", mb: 2.5, mr: 1 }} />
+            <TextField
+              variant="filled"
+              color="secondary"
+              margin="normal"
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              sx={{
+                fontFamily: "eczar",
+                fontWeight: "bold",
+                letterSpacing: 0.8,
+              }}
+            />
+          </Box>
+          <Button
+            type="submit"
+            fullWidth={true}
+            variant="outlined"
+            sx={{
+              mt: 5,
+              mb: 2,
+              height: 50,
+              fontFamily: "eczar",
+              fontWeight: "bold",
+              letterSpacing: 0.8,
+            }}
+          >
+            SIGN UP
+          </Button>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: 1,
+            }}
+          >
+            <Link
+              component={Link}
+              to="/Login"
+              sx={{
+                color: "#fff",
+                textDecoration: "none",
+              }}>
+              Already have an account? Login here.
+            </Link>
+          </Box>
+        </Box>
+      </Paper>
+    </Container>
+  );
 }
 
