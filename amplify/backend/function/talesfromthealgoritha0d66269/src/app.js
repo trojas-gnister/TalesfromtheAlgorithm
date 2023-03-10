@@ -52,7 +52,7 @@ client
           temperature: 0.7,
           max_tokens: 256,
           prompt:
-            "Write me a fantasy story about STORYMAN. Make the story 2 sentences long.",
+            "Write me a fantasy story about STORYMAN. Make the story 1 paragraph long.",
         });
 
         console.log(completion.data.choices[0].text);

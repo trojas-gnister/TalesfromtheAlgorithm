@@ -10,8 +10,12 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
+import { useNavigate } from "react-router-dom";
+
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   const [formState, setFormState] = useState({
     username: "",
     email: "",
@@ -41,6 +45,7 @@ const Signup = () => {
     } catch (e) {
       console.error(e);
     }
+    
   };
 
   return (
@@ -128,20 +133,21 @@ const Signup = () => {
               />
             </Box>
             <Button
-              type="submit"
-              fullWidth={true}
-              variant="outlined"
-              sx={{
-                mt: 5,
-                mb: 2,
-                height: 50,
-                fontFamily: "eczar",
-                fontWeight: "bold",
-                letterSpacing: 0.8,
-              }}
-            >
-              SIGN UP
-            </Button>
+        type="submit"
+        fullWidth={true}
+        variant="outlined"
+        onClick={() => navigate("/choices")}
+        sx={{
+          mt: 5,
+          mb: 2,
+          height: 50,
+          fontFamily: "eczar",
+          fontWeight: "bold",
+          letterSpacing: 0.8,
+        }}
+      >
+        SIGN UP
+      </Button>
             <Box
               sx={{
                 display: "flex",

@@ -51,6 +51,34 @@ export default function DetailedAppBar() {
           >
             About
           </Button>
+          <Button
+            variant="text"
+            component={Link}
+            to="/login"
+            style={{
+              textTransform: "none",
+              color: "white",
+              fontFamily: "Source Sans Pro",
+              fontWeight: "bold",
+              marginRight: 10,
+              fontSize: 16,
+            }}
+          >
+            Login
+          </Button>
+          <Button
+            variant="outlined"
+            component={Link}
+            to="/signup"
+            style={{
+              textTransform: "none",
+              fontFamily: "Source Sans Pro",
+              fontSize: 16,
+              fontWeight: "bold",
+            }}
+          >
+            Sign Up
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>

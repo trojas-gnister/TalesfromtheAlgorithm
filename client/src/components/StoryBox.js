@@ -20,6 +20,7 @@ export default function StoryBox({ generatedText }) {
           label="Story Generates Here"
           multiline
           value={generatedText}
+          inputProps={{ style: { fontSize: "25px" } }}
         />
       </div>
     </Box>

@@ -107,8 +107,7 @@ export default function Home() {
             height: '70vh',
           }
         }
-      >
-      
+        >
       </div>
     </Container>
   </div>
