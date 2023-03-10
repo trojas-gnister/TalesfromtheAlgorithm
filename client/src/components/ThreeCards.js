@@ -13,19 +13,18 @@ import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import AnimateIn from '../components/AnimateIn'
 export default function ThreeCards() {
   return (
-    <Container maxWidth={false} disableGutters sx={{ alignItems: "center" }}>
+    <Container maxWidth={false} disableGutters sx={{ display: 'flex', justifyContent: 'center' }}>
     <AnimateIn>
       <Grid
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
+        container spacing={10}
+        columns={{ xs: 3, sm: 6, md: 8, lg: 12 }}
         sx={{
           height: "30vh",
           marginRight: "auto",
           marginLeft: "auto",
           position: "relative",
-          top: "15vh",
-          left: "15vh",
+          top: '10vh',
+          justifyContent: 'center',
         }}>
 
         {/* Paper 1 -------------- */}
@@ -39,12 +38,12 @@ export default function ThreeCards() {
                 paddingBottom: 6,
                 paddingLeft: 4,
                 paddingRight: 4,
-                width: 300,
-                height: 325,
+                width: 400,
+                height: 425,
                 borderRadius: 10,
                 }}>
-                  <AutoStoriesIcon sx={{ color: '#F2A2E8', mb: 2.5, mr: 1}} />   
-                  <Typography variant='h5'
+                  <AutoStoriesIcon sx={{ width: 50, height: 50, color: '#F2A2E8', mb: 2.5, mr: 1}} />   
+                  <Typography variant='h4'
                   sx={{
                     marginBottom: 2,
                     marginTop: 0,
@@ -53,7 +52,7 @@ export default function ThreeCards() {
                     letterSpacing: 1.25,
                     color: '#F2A2E8',
                   }}>
-                    AI Story Generation
+                    Instant A.I. Story Generation
                   </Typography>
                   <Box
                   sx={{
@@ -62,8 +61,10 @@ export default function ThreeCards() {
                     height: 5,
                     marginBottom: 2,
                   }}></Box>
-                  <Typography variant='h6' fontWeight='bold'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
+                  <Typography variant='h5' fontWeight='bold'>
+                  Generate entire stories with ease. 
+                  ust tell the AI what you want to write about.
+                  Don't like what your reading? Go back and try again!
                   </Typography>
                 </Paper>
         </Grid>
@@ -78,12 +79,12 @@ export default function ThreeCards() {
                 paddingBottom: 6,
                 paddingLeft: 4,
                 paddingRight: 4,
-                width: 300,
-                height: 325,
+                width: 400,
+                height: 425,
                 borderRadius: 10,
                 }}>
-                  <BoltIcon sx={{ color: '#F2A2E8', mb: 2.5, mr: 1}} />   
-                  <Typography variant='h5'
+                  <BoltIcon sx={{ width: 50, height: 50, color: '#F2A2E8', mb: 2.5, mr: 1}} />   
+                  <Typography variant='h4'
                     sx={{
                       marginBottom: 2,
                       marginTop: 0,
@@ -101,8 +102,10 @@ export default function ThreeCards() {
                     height: 5,
                     marginBottom: 2,
                   }}></Box>
-                  <Typography variant='h6' fontWeight='bold'>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
+                  <Typography variant='h5' fontWeight='bold'>
+                  Write a story about whatever you want.
+                  Combine completely random story elements.
+                  DreamAI can handle it.
                   </Typography>
           </Paper>
         </Grid>
@@ -118,15 +121,15 @@ export default function ThreeCards() {
               paddingBottom: 6,
               paddingLeft: 4,
               paddingRight: 4,
-              width: 300,
-              height: 325,
+              width: 400,
+              height: 425,
               borderRadius: 10,
               opacity: 0.9,
             }}
           >
-            <WbIncandescentIcon sx={{ color: '#F2A2E8', mb: 2.5, mr: 1}} />   
+            <WbIncandescentIcon sx={{ width: 50, height: 50, color: '#F2A2E8', mb: 2.5, mr: 1}} />   
             <Typography
-              variant="h5"
+              variant="h4"
               sx={{
                 marginBottom: 2,
                 marginTop: 0,
@@ -136,7 +139,7 @@ export default function ThreeCards() {
                 color: '#F2A2E8'
               }}
             >
-              Other things and stuff.
+              Surprise yourself, every time.
             </Typography>
             <Box
               sx={{
@@ -146,9 +149,9 @@ export default function ThreeCards() {
                 marginBottom: 2,
               }}
             ></Box>
-            <Typography variant="h6" fontWeight="bold">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor i
+            <Typography variant="h5" fontWeight="bold">
+              No two stories will be the same. Our future updates will
+              include an interactive system to change the story at any point.
             </Typography>
           </Paper>
         </Grid>
