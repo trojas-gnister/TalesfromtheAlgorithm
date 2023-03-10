@@ -49,7 +49,7 @@ export default function Heading() {
             fontSize: 63,
           }}
         >
-          Enchant your Imagination.
+          Enhance your Imagination.
         </Typography>
       </Container>
 
