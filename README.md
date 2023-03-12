@@ -21,7 +21,6 @@ The purpose of a storybook AI generator app is to provide users with a fun and c
       <img src="assets/homepageDAI.jpg" alt="homepage" width="25%" height="25%">
       <img src="assets/loginDAI.jpg" alt="loginPage" width="25%" height="25%"> <br>
       <img src="assets/storyPageOneDAI.jpg" alt="storyPage1" width="25%" height="25%">
-      <img src="assets/storyPageTwoDAI.jpg" alt="storyPage2" width="25%" height="25%">
     </td>
   </tr>
 </table>
